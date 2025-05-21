@@ -1,0 +1,18 @@
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/json-2.7.6/ext/json/ext/parser
+/usr/local/rbenv/versions/ruby-2.7.5/bin/ruby -I /usr/local/rbenv/versions/ruby-2.7.5/lib/ruby/2.7.0 -r ./siteconf20250516-3550229-pwaqhe.rb extconf.rb
+checking for rb_enc_raise() in ruby.h... yes
+checking for rb_enc_interned_str() in ruby.h... no
+checking for whether -std=c99 is accepted as CFLAGS... yes
+creating Makefile
+
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/json-2.7.6/ext/json/ext/parser
+make "DESTDIR=" clean
+
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/json-2.7.6/ext/json/ext/parser
+make "DESTDIR="
+compiling parser.c
+linking shared-object json/ext/parser.so
+
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/json-2.7.6/ext/json/ext/parser
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 parser.so ./.gem.20250516-3550229-1sy4z72/json/ext

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title> Rate your delivered products – Order no #<%= @order.order_number %> </title>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+  <div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+    <h1 style="color: #2E86C1; text-align: center;">Rate your delivered products – Order no #<%= @order.order_number %></h1>
+    <p>
+      Dear Customer,
+    </p>
+   <p>
+    We hope you enjoyed shopping with Byezzy. We’ve delivered your order placed on <%= @order.order_placed_at&.strftime("%B %d, %Y at %I:%M %p") %>
+  </p>
+  <ul>
+    <li>Order Details: </li>
+    <ul>
+      <li>Order no. - <%= @order.order_number %></li>
+      <li>Order Summary - <%= @order.order_items.map { |order_item| "(#{order_item.catalogue&.sku} - #{order_item.catalogue&.product_title}, Quantity: #{order_item.quantity})" }.join(', ') %> </li>
+      <li>Order placed on - <%= @order.order_placed_at&.strftime("%B %d, %Y at %I:%M %p") %></li>
+    </ul>
+  </ul>
+  <p>
+    Based on your shopping experience, kindly rate us and submit your feedback.  
+  </p>
+  <p style="text-align: center;">
+    <strong>Rate your experience:</strong>
+  </p>
+  <p style="text-align: center;">
+    <% [1, 2, 3, 4, 5].each do |rating| %>
+    <%= link_to "#{rating} Star#{'s' if rating > 1}", "#{ENV['FE_URL']}/my-account/Order-history", style: "margin: 0 5px; text-decoration: none; color: #2E86C1;" %>
+    <% end %>
+  </p>
+
+  <p style="text-align: center;">Popular products on the store:</p>
+  <p style="text-align: center;">
+    <a href="<%= ENV['FE_URL'] %>" style="color: #2E86C1;">click here</a>
+  </p>
+
+  <p>Regards,</p>
+  <p>Team Byezzy</p>
+</div>
+</body>
+</html>

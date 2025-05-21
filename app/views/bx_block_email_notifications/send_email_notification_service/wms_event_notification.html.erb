@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WMS Event Update Notification</title>
+  <style>
+    body { font-family: Arial, sans-serif; color: #333; line-height: 1.6; }
+    .container { max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+    h2 { color: #333; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { padding: 3px; border: 1px solid #ddd; text-align: left; }
+    th { background-color: #f5f5f5; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>WMS Event Update Notification</h2>
+    <p>Hello <%= @account.full_name %>,</p>
+    <p>The status of one of your consignments has been updated. Here are the details:</p>
+
+    <table>
+      <caption style="font-weight: bold;">Event Details</caption>
+      <% if @wms_event.dig(:event_parameters, :warehouse_code).present? %>
+        <tr><th>Warehouse Code</th><td><%= @wms_event.dig(:event_parameters, :warehouse_code) %></td></tr>
+      <% end %>
+      <% @event = @wms_event[:event] %>
+      <% if @event[:order_number].present? %>
+        <tr><th>Order Number</th><td><%= @event[:order_number] %></td></tr>
+      <% end %>
+      <% if @event[:tracking_number].present? %>
+        <tr><th>Tracking Number</th><td><%= @event[:tracking_number] %></td></tr>
+      <% end %>
+      <% if @event[:number].present? %>
+        <tr><th>Number</th><td><%= @event[:number] %></td></tr>
+      <% end %>
+      <% if @event[:old_state].present? %>
+        <tr><th>Old State</th><td><%= @event[:old_state] %></td></tr>
+      <% end %>
+      <% if @event[:new_state].present? %>
+        <tr><th>New State</th><td><%= @event[:new_state] %></td></tr>
+      <% end %>
+      <% if @event[:event_on].present? %>
+        <tr><th>Event On</th><td><%= @event[:event_on] %></td></tr>
+      <% end %>
+      <% if @event[:time_zone].present? %>
+        <tr><th>Time Zone</th><td><%= @event[:time_zone] %></td></tr>
+      <% end %>
+      <% if @event[:carrier_awb_number].present? %>
+        <tr><th>Carrier AWB Number</th><td><%= @event[:carrier_awb_number] %></td></tr>
+      <% end %>
+      <% if @event[:carrier_tracking_id].present? %>
+        <tr><th>Carrier Tracking ID</th><td><%= @event[:carrier_tracking_id] %></td></tr>
+      <% end %>
+      <% if @event[:carrier_tracking_url].present? %>
+        <tr><th>Carrier Tracking URL</th><td><%= @event[:carrier_tracking_url] %></td></tr>
+      <% end %>
+      <% if @event[:lazada_rts_needed] %>
+        <tr><th>Lazada RTS Needed</th><td><%= @event[:lazada_rts_needed] %></td></tr>
+      <% end %>
+      <% if @event[:is_ewms_integrated_carrier] %>
+        <tr><th>Is eWMS Integrated Carrier</th><td><%= @event[:is_ewms_integrated_carrier] %></td></tr>
+      <% end %>
+      <% if @event[:fulflmnt_order_state].present? %>
+        <tr><th>Fulfillment Order State</th><td><%= @event[:fulflmnt_order_state] %></td></tr>
+      <% end %>
+      <% if @event[:return_order] %>
+        <tr><th>Return Order</th><td><%= @event[:return_order] %></td></tr>
+      <% end %>
+      <% if @event[:cs_error] %>
+        <tr><th>CS Error</th><td><%= @event[:cs_error] %></td></tr>
+      <% end %>
+      <% if @event[:company_code].present? %>
+        <tr><th>Company Code</th><td><%= @event[:company_code] %></td></tr>
+      <% end %>
+      <% if @event[:store_code].present? %>
+        <tr><th>Store Code</th><td><%= @event[:store_code] %></td></tr>
+      <% end %>
+      <% if @event[:order_source].present? %>
+        <tr><th>Order Source</th><td><%= @event[:order_source] %></td></tr>
+      <% end %>
+      <% if @event[:consignment_note_number].present? %>
+        <tr><th>Consignment Note Number</th><td><%= @event[:consignment_note_number] %></td></tr>
+      <% end %>
+      <% if @event[:carrier_name].present? %>
+        <tr><th>Carrier Name</th><td><%= @event[:carrier_name] %></td></tr>
+      <% end %>
+      <% if @event[:carrier_code].present? %>
+        <tr><th>Carrier Code</th><td><%= @event[:carrier_code] %></td></tr>
+      <% end %>
+      <% if @event[:logistic_partner_name].present? %>
+        <tr><th>Logistic Partner Name</th><td><%= @event[:logistic_partner_name] %></td></tr>
+      <% end %>
+      <% if @event[:all_awb_numbers].present? %>
+        <tr><th>All AWB Numbers</th><td><%= @event[:all_awb_numbers].join(", ") %></td></tr>
+      <% end %>
+      <% if @event[:return_order_reason].present? %>
+        <tr><th>Return Order Reason</th><td><%= @event[:return_order_reason] %></td></tr>
+      <% end %>
+      <% if @event[:marketplace_order_date].present? %>
+        <tr><th>Marketplace Order Date</th><td><%= @event[:marketplace_order_date] %></td></tr>
+      <% end %>
+      <% if @event[:channel_name].present? %>
+        <tr><th>Channel Name</th><td><%= @event[:channel_name] %></td></tr>
+      <% end %>
+    </table>
+
+    <% products = @wms_event[:products] %>
+    <% display_columns = products.each_with_object({}) do |product, columns|
+                            product.each { |key, value| columns[key] = true if value.present? }
+                            break columns if columns.values.any?
+                      end %>
+
+    <table>
+      <caption style="font-weight: bold;">Product Details</caption>
+      <tr>
+        <% if display_columns[:sku] %> <th>SKU</th> <% end %>
+        <% if display_columns[:quantity] %> <th>Quantity</th> <% end %>
+        <% if display_columns[:picked_quantity] %> <th>Picked Quantity</th> <% end %>
+        <% if display_columns[:received_qty] %> <th>Received Qty</th> <% end %>
+        <% if display_columns[:usable_quantity] %> <th>Usable Qty</th> <% end %>
+        <% if display_columns[:unusable_quantity] %> <th>Unusable Qty</th> <% end %>
+        <% if display_columns[:batch] %> <th>Batch</th> <% end %>
+        <% if display_columns[:expiry_date] %> <th>Expiry Date</th> <% end %>
+        <% if display_columns[:stock_condition] %> <th>Stock Condition</th> <% end %>
+        <% if display_columns[:received_product_qty] %> <th>Received Product Qty</th> <% end %>
+        <% if display_columns[:is_system_generated] %> <th>System Generated</th> <% end %>
+        <% if display_columns[:received_quantity] %> <th>Received Quantity</th> <% end %>
+      </tr>
+
+      <% products.each do |product| %>
+      <tr>
+        <% if display_columns[:sku] %> <td><%= product[:sku].presence || "N/A" %></td> <% end %>
+        <% if display_columns[:quantity] %> <td><%= product[:quantity].presence || "N/A" %></td> <% end %>
+        <% if display_columns[:picked_quantity] %> <td><%= product[:picked_quantity].presence || "N/A" %></td> <% end %>
+        <% if display_columns[:received_qty] %> <td><%= product[:received_qty].presence || "N/A" %></td> <% end %>
+        <% if display_columns[:usable_quantity] %> <td><%= product[:usable_quantity].presence || "N/A" %></td> <% end %>
+        <% if display_columns[:unusable_quantity] %> <td><%= product[:unusable_quantity].presence || "N/A" %></td> <% end %>
+        <% if display_columns[:batch] %> <td><%= product[:batch].presence || "N/A" %></td> <% end %>
+        <% if display_columns[:expiry_date] %> <td><%= product[:expiry_date].presence || "N/A" %></td> <% end %>
+        <% if display_columns[:stock_condition] %> <td><%= product[:stock_condition].presence || "N/A" %></td> <% end %>
+        <% if display_columns[:received_product_qty] %> <td><%= product[:received_product_qty].presence || "N/A" %></td> <% end %>
+        <% if display_columns[:is_system_generated] %> <td><%= product[:is_system_generated].present? ? product[:is_system_generated] : "N/A" %></td> <% end %>
+        <% if display_columns[:received_quantity] %> <td><%= product[:received_quantity].presence || "N/A" %></td> <% end %>
+      </tr>
+      <% end %>
+    </table>
+
+    <p>Thank you for choosing our service.</p>
+    <p>Regards,</p>
+    <p>Team Byezzy</p>
+  </div>
+</body>
+</html>

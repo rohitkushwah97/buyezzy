@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title> Return Completed: Order ID - <%= @order.order_number %> </title>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+  <div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+    <h1 style="color: #2E86C1; text-align: center;">Return Completed: Order ID - <%= @order.order_number %></h1>
+    <p>
+      Dear Vendor,
+    </p>
+    <p>
+      This is to inform you that the return process for the following order has been completed successfully.
+    </p>
+    <p>
+      We are thrilled to inform you that your product has been delivered to the customer.
+      The details are as follows
+    </p>
+    <ul>
+      <li>
+        Order ID - <%= @order.order_number %>
+      </li>
+      <li>
+        Returned Product(s) - <%= @order.order_items.map { |order_item| "(#{order_item.catalogue&.sku} - #{order_item.catalogue&.product_title})" }.join(', ') %>
+      </li>
+    </ul>
+    <p>
+      For further information, feel free to reach out to us. 
+    </p>
+    <p>Regards,</p>
+    <p>Team Byezzy</p>
+  </div>
+</body>
+</html>

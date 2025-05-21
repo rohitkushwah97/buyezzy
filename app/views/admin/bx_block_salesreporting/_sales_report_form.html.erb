@@ -1,0 +1,125 @@
+<%= form_tag admin_sales_report_generate_report_path, method: :post, remote: true, id: 'report-form' do %>
+   <div class="panel">
+    <div class="panel_contents">
+      <div class="attributes_table">
+        <fieldset class="inputs">
+          <legend>Sales Report Parameters</legend>
+          <ol>
+            <li class="string input required stringish">
+              <label for="report_type">Report Type</label>
+              <select id="report_type" name="report_type">
+                <option value="">Please select</option>
+                <% BxBlockSalesreporting::SalesReportService::REPORT_TYPES.each do |type| %>
+                  <option value="<%= type %>"><%= type.titleize %></option>
+                <% end %>
+              </select>
+            </li>
+            <li class="string input required stringish">
+              <label for="period">Period</label>
+              <select id="period" name="period">
+                <option value="daily">Daily</option>
+                <option value="custom">Custom</option>
+              </select>
+            </li>
+            <li class="string input required stringish">
+              <label for="start_date">Start Date</label>
+              <input type="date" id="start_date" name="start_date">
+            </li>
+            <li class="string input required stringish">
+              <label for="end_date">End Date</label>
+              <input type="date" id="end_date" name="end_date">
+            </li>
+          </ol>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= submit_tag 'Generate Report', class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+
+<div id="report-results"></div>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    $('#report-form').on('ajax:success', (event, data, status, xhr) => {
+      const resultData = JSON.parse(data);
+      let tableHtml = '<table class="index_table"><thead><tr>';
+
+      let dataKey;
+      if (resultData.report) {
+        dataKey = 'report';
+      } else if (resultData.gsv_by_category) {
+        dataKey = 'gsv_by_category';
+      } else if (resultData.units_sold_by_category) {
+        dataKey = 'units_sold_by_category';
+      } else if (resultData.product_views_by_category) {
+        dataKey = 'product_views_by_category';
+      }
+
+      console.log("res", resultData[dataKey])
+
+      if (resultData[dataKey].length < 1) {
+        $('#report-results').html('<p>No data available for the selected report type.</p>');
+        return;
+      }
+
+      const firstItem = resultData[dataKey][0];
+      if (firstItem) {
+        Object.keys(firstItem).forEach(key => {
+          tableHtml += `<th>${key}</th>`;
+        });
+
+      ['gross_sales_value', 'average_selling_price', 'units_sold'].forEach(key => {
+          if (resultData[key]) {
+            tableHtml += `<th>${key}</th>`;
+          }
+        });
+      }
+
+      tableHtml += '</tr></thead><tbody>';
+      resultData[dataKey].forEach(item => {
+        tableHtml += '<tr>';
+        Object.entries(item).forEach(([key, value]) => {
+          if (key === 'orders' && Array.isArray(value)) {
+            const orderNumbers = value.map(order => order.order_number).join(', ');
+            tableHtml += `<td>${orderNumbers}</td>`;
+          } else if (key === 'products' && Array.isArray(value)) {
+          const productDetails = value.map(product => {
+            let productInfo = `SKU: ${product.sku}, BESKU: ${product.besku}, Name: ${product.product_name}`;
+            if (product.orders && Array.isArray(product.orders)) {
+              const orderNumbers = product.orders.map(order => order.order_number).join(', ');
+            productInfo += `, Orders: ${orderNumbers}`;
+            }
+            if (product.no_of_views) {
+              productInfo += `, No of views: ${product.no_of_views}`;
+            }
+            return `<li>${productInfo}</li>`;
+            }).join('');
+          tableHtml += `<td><ul>${productDetails}</ul></td>`;
+          } else {
+            if (Array.isArray(value)) {
+              value = JSON.stringify(value);
+            }
+            tableHtml += `<td>${value}</td>`;
+          }
+        });
+
+        ['gross_sales_value', 'average_selling_price', 'units_sold'].forEach(key => {
+          if (resultData[key]) {
+            tableHtml += `<td>${resultData[key]}</td>`;
+          }
+        });
+        tableHtml += '</tr>';
+      });
+      tableHtml += '</tbody></table>';
+      $('#report-results').html(tableHtml);
+    }).on('ajax:error', (event, xhr, status, error) => {
+      $('#report-results').html('<p>An error occurred while generating the report.</p>');
+    });
+  });
+</script>
+

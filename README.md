@@ -1,0 +1,57 @@
+# **Ruby** | _**ByEzzy1**_ | _**290342** | _**studio_pro**_
+
+## **Catalog ProjectId: 151510** | **Catalog BuildId: 19483**
+
+## NOTE FOR DEVELOPERS:
+Clone the code-engine branch into your working branch. The contents of the branch may get overwritten.
+## Author:
+Code-Engine
+## Assembled Features To Block Status
+
+| **Feature-Name**        | **Block-Name**        | **Path**  | **Status**  |
+|:-------------|:-------------|:-------------|:-------------|
+| Payments      | bx_block_stripe_integration<br>      | {+app/controllers/bx_block_stripe_integration+}<br> | {+Non-Empty+} |
+| BulkUploading      | bx_block_bulk_uploading<br>bx_block_login<br>account_block<br>bx_block_sms<br>      | {+app/controllers/bx_block_bulk_uploading+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/account_block+}<br>{++}<br> | {+Non-Empty+} |
+| Search2      | bx_block_search<br>bx_block_chat<br>bx_block_push_notifications<br>bx_block_comments<br>bx_block_like<br>bx_block_posts<br>bx_block_categories<br>bx_block_login<br>account_block<br>bx_block_sms<br>bx_block_profile<br>      | {++}<br>{+app/controllers/bx_block_chat+}<br>{+app/controllers/bx_block_push_notifications+}<br>{+app/controllers/bx_block_comments+}<br>{+app/controllers/bx_block_like+}<br>{+app/controllers/bx_block_posts+}<br>{+app/controllers/bx_block_categories+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/account_block+}<br>{++}<br>{+app/controllers/bx_block_profile+}<br> | {+Non-Empty+} |
+| OrderManagement2      | bx_block_order_management<br>bx_block_catalogue<br>bx_block_categories<br>bx_block_login<br>account_block<br>bx_block_sms<br>bx_block_coupon_cg<br>bx_block_fedex_integration<br>      | {+app/controllers/bx_block_order_management+}<br>{+app/controllers/bx_block_catalogue+}<br>{+app/controllers/bx_block_categories+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/account_block+}<br>{++}<br>{+app/controllers/bx_block_coupon_cg+}<br>{+app/controllers/bx_block_fedex_integration+}<br> | {+Non-Empty+} |
+| Dashboard4      | bx_block_dashboard<br>      | {+app/controllers/bx_block_dashboard+}<br> | {+Non-Empty+} |
+| Catalogue      | bx_block_catalogue<br>bx_block_categories<br>bx_block_login<br>account_block<br>bx_block_sms<br>      | {+app/controllers/bx_block_catalogue+}<br>{+app/controllers/bx_block_categories+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/account_block+}<br>{++}<br> | {+Non-Empty+} |
+| AdminConsole      | bx_block_admin<br>      | {+app/controllers/bx_block_admin+}<br> | {+Non-Empty+} |
+| EmailLogin2      | account_block<br>bx_block_login<br>bx_block_forgot_password<br>bx_block_sms<br>      | {+app/controllers/account_block+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/bx_block_forgot_password+}<br>{++}<br> | {+Non-Empty+} |
+| RolesPermissions      | bx_block_roles_permissions<br>account_block<br>bx_block_sms<br>      | {+app/controllers/bx_block_roles_permissions+}<br>{+app/controllers/account_block+}<br>{++}<br> | {+Non-Empty+} |
+| Profilebio      | bx_block_profile<br>bx_block_profile_bio<br>bx_block_categories<br>bx_block_login<br>bx_block_favourites<br>bx_block_like<br>bx_block_posts<br>account_block<br>bx_block_sms<br>bx_block_location<br>bx_block_address<br>bx_block_appointment_management<br>bx_block_roles_permissions<br>bx_block_push_notifications<br>bx_block_request_management<br>      | {+app/controllers/bx_block_profile+}<br>{+app/controllers/bx_block_profile_bio+}<br>{+app/controllers/bx_block_categories+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/bx_block_favourites+}<br>{+app/controllers/bx_block_like+}<br>{+app/controllers/bx_block_posts+}<br>{+app/controllers/account_block+}<br>{++}<br>{+app/controllers/bx_block_location+}<br>{+app/controllers/bx_block_address+}<br>{+app/controllers/bx_block_appointment_management+}<br>{+app/controllers/bx_block_roles_permissions+}<br>{+app/controllers/bx_block_push_notifications+}<br>{+app/controllers/bx_block_request_management+}<br> | {+Non-Empty+} |
+| ConnectSocialMediaAccount      | account_block<br>bx_block_login<br>bx_block_sms<br>      | {+app/controllers/account_block+}<br>{+app/controllers/bx_block_login+}<br>{++}<br> | {+Non-Empty+} |
+| Sorting6      | bx_block_sorting<br>bx_block_catalogue<br>bx_block_categories<br>bx_block_login<br>account_block<br>bx_block_sms<br>      | {+app/controllers/bx_block_sorting+}<br>{+app/controllers/bx_block_catalogue+}<br>{+app/controllers/bx_block_categories+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/account_block+}<br>{++}<br> | {+Non-Empty+} |
+| FilterItems      | bx_block_filter_items<br>bx_block_catalogue<br>bx_block_categories<br>bx_block_login<br>account_block<br>bx_block_sms<br>      | {+app/controllers/bx_block_filter_items+}<br>{+app/controllers/bx_block_catalogue+}<br>{+app/controllers/bx_block_categories+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/account_block+}<br>{++}<br> | {+Non-Empty+} |
+| CustomAdvertisements      | bx_block_custom_ads<br>bx_block_custom_form<br>bx_block_login<br>account_block<br>bx_block_sms<br>      | {+app/controllers/bx_block_custom_ads+}<br>{+app/controllers/bx_block_custom_form+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/account_block+}<br>{++}<br> | {+Non-Empty+} |
+| ForgotPassword3      | bx_block_forgot_password<br>account_block<br>bx_block_sms<br>      | {+app/controllers/bx_block_forgot_password+}<br>{+app/controllers/account_block+}<br>{++}<br> | {+Non-Empty+} |
+| CategoriessubCategories      | bx_block_categories<br>bx_block_login<br>account_block<br>bx_block_sms<br>      | {+app/controllers/bx_block_categories+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/account_block+}<br>{++}<br> | {+Non-Empty+} |
+| CustomisedOrderStatus      | bx_block_order_management<br>bx_block_catalogue<br>bx_block_categories<br>bx_block_login<br>account_block<br>bx_block_sms<br>bx_block_coupon_cg<br>bx_block_fedex_integration<br>      | {+app/controllers/bx_block_order_management+}<br>{+app/controllers/bx_block_catalogue+}<br>{+app/controllers/bx_block_categories+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/account_block+}<br>{++}<br>{+app/controllers/bx_block_coupon_cg+}<br>{+app/controllers/bx_block_fedex_integration+}<br> | {+Non-Empty+} |
+| AccountCreation      | account_block<br>      | {+app/controllers/account_block+}<br> | {+Non-Empty+} |
+| CustomForm2      | bx_block_custom_form<br>bx_block_login<br>account_block<br>bx_block_sms<br>      | {+app/controllers/bx_block_custom_form+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/account_block+}<br>{++}<br> | {+Non-Empty+} |
+| Reviews      | bx_block_reviews<br>      | {+app/controllers/bx_block_reviews+}<br> | {+Non-Empty+} |
+| Notifications      | bx_block_notifications<br>bx_block_push_notifications<br>bx_block_login<br>account_block<br>bx_block_sms<br>      | {+app/controllers/bx_block_notifications+}<br>{+app/controllers/bx_block_push_notifications+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/account_block+}<br>{++}<br> | {+Non-Empty+} |
+| DiscountsOffers      | bx_block_promo_codes<br>bx_block_login<br>account_block<br>bx_block_sms<br>bx_block_admin<br>      | {+app/controllers/bx_block_promo_codes+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/account_block+}<br>{++}<br>{+app/controllers/bx_block_admin+}<br> | {+Non-Empty+} |
+| TwofactorAuthentication2      | account_block<br>bx_block_forgot_password<br>      | {+app/controllers/account_block+}<br>{+app/controllers/bx_block_forgot_password+}<br> | {+Non-Empty+} |
+| ShoppingCart2      | bx_block_shopping_cart<br>bx_block_address<br>bx_block_login<br>account_block<br>bx_block_sms<br>bx_block_catalogue<br>bx_block_categories<br>      | {+app/controllers/bx_block_shopping_cart+}<br>{+app/controllers/bx_block_address+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/account_block+}<br>{++}<br>{+app/controllers/bx_block_catalogue+}<br>{+app/controllers/bx_block_categories+}<br> | {+Non-Empty+} |
+| Favourites      | bx_block_favourites<br>bx_block_login<br>account_block<br>bx_block_sms<br>      | {+app/controllers/bx_block_favourites+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/account_block+}<br>{++}<br> | {+Non-Empty+} |
+| OrderSummary      | bx_block_order_management<br>bx_block_catalogue<br>bx_block_categories<br>bx_block_login<br>account_block<br>bx_block_sms<br>bx_block_coupon_cg<br>bx_block_fedex_integration<br>      | {+app/controllers/bx_block_order_management+}<br>{+app/controllers/bx_block_catalogue+}<br>{+app/controllers/bx_block_categories+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/account_block+}<br>{++}<br>{+app/controllers/bx_block_coupon_cg+}<br>{+app/controllers/bx_block_fedex_integration+}<br> | {+Non-Empty+} |
+| ContactUs2      | bx_block_contact_us<br>bx_block_profile<br>account_block<br>bx_block_sms<br>bx_block_login<br>      | {+app/controllers/bx_block_contact_us+}<br>{+app/controllers/bx_block_profile+}<br>{+app/controllers/account_block+}<br>{++}<br>{+app/controllers/bx_block_login+}<br> | {+Non-Empty+} |
+| OrderDetailView      | bx_block_order_management<br>bx_block_catalogue<br>bx_block_categories<br>bx_block_login<br>account_block<br>bx_block_sms<br>bx_block_coupon_cg<br>bx_block_fedex_integration<br>      | {+app/controllers/bx_block_order_management+}<br>{+app/controllers/bx_block_catalogue+}<br>{+app/controllers/bx_block_categories+}<br>{+app/controllers/bx_block_login+}<br>{+app/controllers/account_block+}<br>{++}<br>{+app/controllers/bx_block_coupon_cg+}<br>{+app/controllers/bx_block_fedex_integration+}<br> | {+Non-Empty+} |
+| EmailNotifications2      | bx_block_email_notifications<br>      | {+app/controllers/bx_block_email_notifications+}<br> | {+Non-Empty+} |
+| ProductQuickview      | bx_block_productquickview      | {-app/controllers/bx_block_productquickview-} | {-Empty-} |
+| InvoiceBilling      | bx_block_invoicebilling      | {-app/controllers/bx_block_invoicebilling-} | {-Empty-} |
+| ItemAvailability      | bx_block_itemavailability      | {-app/controllers/bx_block_itemavailability-} | {-Empty-} |
+| ReviewAndApproval      | bx_block_reviewandapproval      | {-app/controllers/bx_block_reviewandapproval-} | {-Empty-} |
+| SalesReporting      | bx_block_salesreporting      | {-app/controllers/bx_block_salesreporting-} | {-Empty-} |
+| TermsAndConditions3      | bx_block_termsandconditions3      | {-app/controllers/bx_block_termsandconditions3-} | {-Empty-} |
+| LandingPage      | bx_block_landingpage      | {-app/controllers/bx_block_landingpage-} | {-Empty-} |
+| Analytics3      | bx_block_analytics3      | {-app/controllers/bx_block_analytics3-} | {-Empty-} |
+| InventoryManagementIntegration2      | bx_block_inventorymanagementintegration2      | {-app/controllers/bx_block_inventorymanagementintegration2-} | {-Empty-} |
+| CarouselDisplay2      | bx_block_carouseldisplay2      | {-app/controllers/bx_block_carouseldisplay2-} | {-Empty-} |
+| ActivityLog      | bx_block_activitylog      | {-app/controllers/bx_block_activitylog-} | {-Empty-} |
+
+## GRAFANA BACKEND URL
+ - https://grafana.byezzy1-290342-ruby.b290342.dev.eastus.az.svc.builder.cafe
+
+This application is a Ruby API. Full README coming soon...

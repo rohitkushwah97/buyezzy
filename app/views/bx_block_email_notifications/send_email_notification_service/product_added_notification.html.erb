@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title> Product Successfully Added </title>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+  <div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+    <h1 style="color: #2E86C1; text-align: center;">Product Successfully Added!</h1>
+    <p>
+      Dear Vendor,
+    </p>
+    <p>
+      We're thrilled to inform you that your product 
+      <span style="text-decoration: underline; font-weight: bold;"><%= @product.product_title %></span> 
+      has been successfully added to our platform with the SKU: 
+      <span style="text-decoration: underline; font-weight: bold;"><%= @product.sku %></span>.
+    </p>
+    <p>The product is now live and available for purchase by our customers.</p>
+
+    <p>Regards,</p>
+    <p>Team Byezzy</p>
+  </div>
+</body>
+</html>

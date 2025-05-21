@@ -1,0 +1,5 @@
+<% if @account&.user_type == 'buyer' %>
+  <%= render partial: '/bx_block_email_notifications/send_email_notification_service/account/buyer_welcome_email' %>
+<% else %>
+  <%= render partial: '/bx_block_email_notifications/send_email_notification_service/account/seller_welcome_email' %>
+<% end %>

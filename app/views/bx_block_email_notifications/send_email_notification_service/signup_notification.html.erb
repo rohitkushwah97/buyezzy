@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title> OTP for your Byezzy Account </title>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+  <div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+    <h1 style="color: #2E86C1; text-align: center;">OTP for your Byezzy Account</h1>
+    <% if @account&.user_type == 'buyer' %>
+    <%= render partial: '/bx_block_email_notifications/send_email_notification_service/account/buyer_otp_notification' %>
+    <% else %>
+    <%= render partial: '/bx_block_email_notifications/send_email_notification_service/account/seller_otp_notification' %>
+    <% end %>
+    <p>Regards,</p>
+    <p>Team Byezzy</p>
+  </div>
+</body>
+</html>

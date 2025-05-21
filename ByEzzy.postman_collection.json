@@ -1,0 +1,1396 @@
+{
+	"item": [
+		{
+			"name": "create_product",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "search_brands_1",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "search_brands_2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{stage_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{stage}}/search_brands?keyword=Kids",
+							"host": [
+								"{{stage}}"
+							],
+							"path": [
+								"search_brands"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "Kids"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search_catalogues_by_brand_3",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{stage_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{stage}}/search_brands?keyword=Kids",
+							"host": [
+								"{{stage}}"
+							],
+							"path": [
+								"search_brands"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "Kids"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sku_validate_4",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{stage_token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{stage}}/search_brands?keyword=Kids",
+							"host": [
+								"{{stage}}"
+							],
+							"path": [
+								"search_brands"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "Kids"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "catalogues_5",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{stage_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sku",
+									"value": "sdfdsfdsfdsfffffff23323",
+									"type": "text"
+								},
+								{
+									"key": "besku",
+									"value": "B7283B2513104738",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "sub_category_id",
+									"value": " 5",
+									"type": "text"
+								},
+								{
+									"key": "mini_category_id",
+									"value": " 12",
+									"type": "text"
+								},
+								{
+									"key": "micro_category_id",
+									"value": " 11",
+									"type": "text"
+								},
+								{
+									"key": "brand_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "product_image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{stage}}bx_block_catalogue/catalogues",
+							"host": [
+								"{{stage}}bx_block_catalogue"
+							],
+							"path": [
+								"catalogues"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product_contents_8",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{stage_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"attributes\": {\n      \"gtin\": \"\",\n      \"unique_psku\": \"sdfdsfdsfdsfffffff23323\",\n      \"brand_name\": \"Kids\",\n      \"catalogue_content_attributes\": [],\n      \"country_of_origin\": \"India\",\n      \"dispenser_type\": \"\",\n      \"feature_bullets_attributes\": [\n        {\n          \"field_name\": \"Feature Bullet 1 *\",\n          \"value\": \"new product good quelity\"\n        }\n      ],\n      \"image_urls_attributes\": [\n        {\n          \"url\": \"www.com\"\n        }\n      ],\n      \"long_description\": \"which includes the user's login credentials). You can use this JSON structure for user login purposes in your API.\",\n      \"mrp\": \"\",\n      \"product_color\": \"Light Coral\",\n      \"product_title\": \"this new test product\",\n      \"retail_price\": \"2000\",\n      \"scent_type\": \"\",\n      \"shipping_detail_attributes\": {\n        \"shipping_length\": \"\",\n        \"shipping_length_unit\": null,\n        \"shipping_width\": \"\",\n        \"shipping_width_unit\": null,\n        \"shipping_height\": \"\",\n        \"shipping_height_unit\": null,\n        \"shipping_weight\": \"\",\n        \"shipping_weight_unit\": null\n      },\n      \"size_and_capacity_attributes\": {\n        \"capacity\": \"\",\n        \"capacity_unit\": null,\n        \"hs_code\": \"\",\n        \"number_of_pieces\": \"\",\n        \"prod_model_name\": \"\",\n        \"prod_model_number\": \"\",\n        \"size\": \"\",\n        \"size_unit\": null\n      },\n      \"style_name\": \"\",\n      \"target_use\": \"\",\n      \"warranty_days\": \"10\",\n      \"warranty_months\": \"12\",\n      \"whats_in_the_package\": \"which includes the user's login credentials). You can use this JSON structure for user login purposes in your API.\"\n    }\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{stage}}bx_block_catalogue/catalogues/715/product_contents",
+							"host": [
+								"{{stage}}bx_block_catalogue"
+							],
+							"path": [
+								"catalogues",
+								"715",
+								"product_contents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "catalogue_contents_6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{stage_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sku",
+									"value": "sdfdsfdsfdsfffffff23323",
+									"type": "text"
+								},
+								{
+									"key": "besku",
+									"value": "B7283B2513104738",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "sub_category_id",
+									"value": " 5",
+									"type": "text"
+								},
+								{
+									"key": "mini_category_id",
+									"value": " 12",
+									"type": "text"
+								},
+								{
+									"key": "micro_category_id",
+									"value": " 11",
+									"type": "text"
+								},
+								{
+									"key": "brand_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "product_image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{stage}}bx_block_catalogue/catalogues/715/catalogue_contents",
+							"host": [
+								"{{stage}}bx_block_catalogue"
+							],
+							"path": [
+								"catalogues",
+								"715",
+								"catalogue_contents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product_contents_7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{stage_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sku",
+									"value": "sdfdsfdsfdsfffffff23323",
+									"type": "text"
+								},
+								{
+									"key": "besku",
+									"value": "B7283B2513104738",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "sub_category_id",
+									"value": " 5",
+									"type": "text"
+								},
+								{
+									"key": "mini_category_id",
+									"value": " 12",
+									"type": "text"
+								},
+								{
+									"key": "micro_category_id",
+									"value": " 11",
+									"type": "text"
+								},
+								{
+									"key": "brand_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "product_image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{stage}}/bx_block_catalogue/catalogues/715/product_contents",
+							"host": [
+								"{{stage}}"
+							],
+							"path": [
+								"bx_block_catalogue",
+								"catalogues",
+								"715",
+								"product_contents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "catalogues_9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{stage_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sku",
+									"value": "sdfdsfdsfdsfffffff23323",
+									"type": "text"
+								},
+								{
+									"key": "besku",
+									"value": "B7283B2513104738",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "sub_category_id",
+									"value": " 5",
+									"type": "text"
+								},
+								{
+									"key": "mini_category_id",
+									"value": " 12",
+									"type": "text"
+								},
+								{
+									"key": "micro_category_id",
+									"value": " 11",
+									"type": "text"
+								},
+								{
+									"key": "brand_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "product_image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{stage}}bx_block_catalogue/catalogues/715",
+							"host": [
+								"{{stage}}bx_block_catalogue"
+							],
+							"path": [
+								"catalogues",
+								"715"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "micro_category_id_10",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{stage_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sku",
+									"value": "sdfdsfdsfdsfffffff23323",
+									"type": "text"
+								},
+								{
+									"key": "besku",
+									"value": "B7283B2513104738",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "sub_category_id",
+									"value": " 5",
+									"type": "text"
+								},
+								{
+									"key": "mini_category_id",
+									"value": " 12",
+									"type": "text"
+								},
+								{
+									"key": "micro_category_id",
+									"value": " 11",
+									"type": "text"
+								},
+								{
+									"key": "brand_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "product_image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{stage}}bx_block_catalogue/catalogue_variants?micro_category_id=11",
+							"host": [
+								"{{stage}}bx_block_catalogue"
+							],
+							"path": [
+								"catalogue_variants"
+							],
+							"query": [
+								{
+									"key": "micro_category_id",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product_variant_groups_11",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{stage_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sku",
+									"value": "sdfdsfdsfdsfffffff23323",
+									"type": "text"
+								},
+								{
+									"key": "besku",
+									"value": "B7283B2513104738",
+									"type": "text"
+								},
+								{
+									"key": "category_id",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "sub_category_id",
+									"value": " 5",
+									"type": "text"
+								},
+								{
+									"key": "mini_category_id",
+									"value": " 12",
+									"type": "text"
+								},
+								{
+									"key": "micro_category_id",
+									"value": " 11",
+									"type": "text"
+								},
+								{
+									"key": "brand_id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "product_image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{stage}}bx_block_catalogue/catalogue_variants?micro_category_id=11",
+							"host": [
+								"{{stage}}bx_block_catalogue"
+							],
+							"path": [
+								"catalogue_variants"
+							],
+							"query": [
+								{
+									"key": "micro_category_id",
+									"value": "11"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "barcodes_12",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{stage_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"barcode\": {\n    \"bar_code\": \"afdsfdfd23232323\"\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{stage}}bx_block_catalogue/catalogues/715/barcodes",
+							"host": [
+								"{{stage}}bx_block_catalogue"
+							],
+							"path": [
+								"catalogues",
+								"715",
+								"barcodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "catalogue_offers_13",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{stage_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"attributes\": {\n      \"price_info\": \"2000\",\n      \"sale_price\": \"2000\",\n      \"sale_schedule_from\": \"27-04-2025\",\n      \"sale_schedule_to\": \"30-04-2025\",\n      \"status\": true\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{stage}}bx_block_catalogue/catalogues/715/catalogue_offers",
+							"host": [
+								"{{stage}}bx_block_catalogue"
+							],
+							"path": [
+								"catalogues",
+								"715",
+								"catalogue_offers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deals_14",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{stage_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"attributes\": {\n      \"price_info\": \"2000\",\n      \"sale_price\": \"2000\",\n      \"sale_schedule_from\": \"27-04-2025\",\n      \"sale_schedule_to\": \"30-04-2025\",\n      \"status\": true\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{stage}}/bx_block_catalogue/deals?per_page=10&page=1",
+							"host": [
+								"{{stage}}"
+							],
+							"path": [
+								"bx_block_catalogue",
+								"deals"
+							],
+							"query": [
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deal_catalogues_15",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{stage_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"attributes\": {\n      \"price_info\": \"2000\",\n      \"sale_price\": \"2000\",\n      \"sale_schedule_from\": \"27-04-2025\",\n      \"sale_schedule_to\": \"30-04-2025\",\n      \"status\": true\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{stage}}bx_block_catalogue/deals/4/deal_catalogues?per_page=10&page=1",
+							"host": [
+								"{{stage}}bx_block_catalogue"
+							],
+							"path": [
+								"deals",
+								"4",
+								"deal_catalogues"
+							],
+							"query": [
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "catalogues_16",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{stage_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"data\": {\n    \"attributes\": {\n      \"price_info\": \"2000\",\n      \"sale_price\": \"2000\",\n      \"sale_schedule_from\": \"27-04-2025\",\n      \"sale_schedule_to\": \"30-04-2025\",\n      \"status\": true\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{stage}}bx_block_catalogue/catalogues?search=&per_page=10&page=1&sort_by=",
+							"host": [
+								"{{stage}}bx_block_catalogue"
+							],
+							"path": [
+								"catalogues"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "per_page",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "sort_by",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "catalogues_16 Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "token",
+								"value": "{{stage_token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fulfilled_type",
+									"value": "byezzy",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "true",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{stage}}/bx_block_catalogue/catalogues/715",
+							"host": [
+								"{{stage}}"
+							],
+							"path": [
+								"bx_block_catalogue",
+								"catalogues",
+								"715"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "loged_user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MTI5LCJleHAiOjE3NDU2NjMxODQsInRva2VuX3R5cGUiOiJsb2dpbiJ9.jmfmKe23fmzMhBBAdwFO6BDBQxwVmekFdeBUWtcavNGBiQHZQSyEFJhCd6fd1TnqwQXRPT6u7C8D_sBVpkd7fQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{stage}}/account_block/accounts/logged_user",
+					"host": [
+						"{{stage}}"
+					],
+					"path": [
+						"account_block",
+						"accounts",
+						"logged_user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MTI5LCJleHAiOjE3NDU2NjMxODQsInRva2VuX3R5cGUiOiJsb2dpbiJ9.jmfmKe23fmzMhBBAdwFO6BDBQxwVmekFdeBUWtcavNGBiQHZQSyEFJhCd6fd1TnqwQXRPT6u7C8D_sBVpkd7fQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{stage}}//account_block/accounts/129",
+					"host": [
+						"{{stage}}"
+					],
+					"path": [
+						"",
+						"account_block",
+						"accounts",
+						"129"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "seller_warehouse_listing",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MTI5LCJleHAiOjE3NDU2NjMxODQsInRva2VuX3R5cGUiOiJsb2dpbiJ9.jmfmKe23fmzMhBBAdwFO6BDBQxwVmekFdeBUWtcavNGBiQHZQSyEFJhCd6fd1TnqwQXRPT6u7C8D_sBVpkd7fQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{stage}}//account_block/accounts/129",
+					"host": [
+						"{{stage}}"
+					],
+					"path": [
+						"",
+						"account_block",
+						"accounts",
+						"129"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "catalogue",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MTI5LCJleHAiOjE3NDU2NjMxODQsInRva2VuX3R5cGUiOiJsb2dpbiJ9.jmfmKe23fmzMhBBAdwFO6BDBQxwVmekFdeBUWtcavNGBiQHZQSyEFJhCd6fd1TnqwQXRPT6u7C8D_sBVpkd7fQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{stage}}//account_block/accounts/129",
+					"host": [
+						"{{stage}}"
+					],
+					"path": [
+						"",
+						"account_block",
+						"accounts",
+						"129"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "catalocatalogues?fulfillment",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MTI5LCJleHAiOjE3NDU2NjMxODQsInRva2VuX3R5cGUiOiJsb2dpbiJ9.jmfmKe23fmzMhBBAdwFO6BDBQxwVmekFdeBUWtcavNGBiQHZQSyEFJhCd6fd1TnqwQXRPT6u7C8D_sBVpkd7fQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{stage}}//account_block/accounts/129",
+					"host": [
+						"{{stage}}"
+					],
+					"path": [
+						"",
+						"account_block",
+						"accounts",
+						"129"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_consignment_order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "WQ9NeAFG4SUsItDfQXZXT0SGqbRkPbRgZ4yJFys5rsk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MTI5LCJleHAiOjE3NDU2NjMxODQsInRva2VuX3R5cGUiOiJsb2dpbiJ9.jmfmKe23fmzMhBBAdwFO6BDBQxwVmekFdeBUWtcavNGBiQHZQSyEFJhCd6fd1TnqwQXRPT6u7C8D_sBVpkd7fQ",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "token",
+						"value": "{{stage_token}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "token",
+						"value": "{{local_token}}",
+						"type": "text"
+					},
+					{
+						"key": "authorization",
+						"value": "WQ9NeAFG4SUsItDfQXZXT0SGqbRkPbRgZ4yJFys5rsk",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "catalogue_id",
+							"value": "714",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "33",
+							"type": "text"
+						},
+						{
+							"key": "warehouse_code",
+							"value": "\"BEZY\"",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}/bx_block_order_management/anchanto_wms/create_consignment_order",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"bx_block_order_management",
+						"anchanto_wms",
+						"create_consignment_order"
+					],
+					"query": [
+						{
+							"key": "authorization",
+							"value": "WQ9NeAFG4SUsItDfQXZXT0SGqbRkPbRgZ4yJFys5rsk",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "wms_event",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "WQ9NeAFG4SUsItDfQXZXT0SGqbRkPbRgZ4yJFys5rsk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MTI5LCJleHAiOjE3NDU2NjMxODQsInRva2VuX3R5cGUiOiJsb2dpbiJ9.jmfmKe23fmzMhBBAdwFO6BDBQxwVmekFdeBUWtcavNGBiQHZQSyEFJhCd6fd1TnqwQXRPT6u7C8D_sBVpkd7fQ",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "token",
+						"value": "{{stage_token}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "token",
+						"value": "{{local_token}}",
+						"type": "text"
+					},
+					{
+						"key": "authorization",
+						"value": "WQ9NeAFG4SUsItDfQXZXT0SGqbRkPbRgZ4yJFys5rsk",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "catalogue_id",
+							"value": "714",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "33",
+							"type": "text"
+						},
+						{
+							"key": "warehouse_code",
+							"value": "\"BEZY\"",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}/bx_block_order_management/anchanto_wms/create_consignment_order",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"bx_block_order_management",
+						"anchanto_wms",
+						"create_consignment_order"
+					],
+					"query": [
+						{
+							"key": "authorization",
+							"value": "WQ9NeAFG4SUsItDfQXZXT0SGqbRkPbRgZ4yJFys5rsk",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_wms_product",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "WQ9NeAFG4SUsItDfQXZXT0SGqbRkPbRgZ4yJFys5rsk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MTI5LCJleHAiOjE3NDU2NjMxODQsInRva2VuX3R5cGUiOiJsb2dpbiJ9.jmfmKe23fmzMhBBAdwFO6BDBQxwVmekFdeBUWtcavNGBiQHZQSyEFJhCd6fd1TnqwQXRPT6u7C8D_sBVpkd7fQ",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "token",
+						"value": "{{stage_token}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "token",
+						"value": "{{local_token}}",
+						"type": "text"
+					},
+					{
+						"key": "authorization",
+						"value": "WQ9NeAFG4SUsItDfQXZXT0SGqbRkPbRgZ4yJFys5rsk",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "catalogue_id",
+							"value": "714",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "33",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "warehouse_code",
+							"value": "\"BEZY\"",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}/bx_block_order_management/anchanto_wms/create_wms_product",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"bx_block_order_management",
+						"anchanto_wms",
+						"create_wms_product"
+					],
+					"query": [
+						{
+							"key": "authorization",
+							"value": "WQ9NeAFG4SUsItDfQXZXT0SGqbRkPbRgZ4yJFys5rsk",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "product_content",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "WQ9NeAFG4SUsItDfQXZXT0SGqbRkPbRgZ4yJFys5rsk",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MTI5LCJleHAiOjE3NDU2NjMxODQsInRva2VuX3R5cGUiOiJsb2dpbiJ9.jmfmKe23fmzMhBBAdwFO6BDBQxwVmekFdeBUWtcavNGBiQHZQSyEFJhCd6fd1TnqwQXRPT6u7C8D_sBVpkd7fQ",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "token",
+						"value": "{{stage_token}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "token",
+						"value": "{{local_token}}",
+						"type": "text"
+					},
+					{
+						"key": "authorization",
+						"value": "WQ9NeAFG4SUsItDfQXZXT0SGqbRkPbRgZ4yJFys5rsk",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "catalogue_id",
+							"value": "714",
+							"type": "text"
+						},
+						{
+							"key": "quantity",
+							"value": "33",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "warehouse_code",
+							"value": "\"BEZY\"",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}/bx_block_order_management/anchanto_wms/create_wms_product",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"bx_block_order_management",
+						"anchanto_wms",
+						"create_wms_product"
+					],
+					"query": [
+						{
+							"key": "authorization",
+							"value": "WQ9NeAFG4SUsItDfQXZXT0SGqbRkPbRgZ4yJFys5rsk",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "seller_documents",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MTI5LCJleHAiOjE3NDU2NjMxODQsInRva2VuX3R5cGUiOiJsb2dpbiJ9.jmfmKe23fmzMhBBAdwFO6BDBQxwVmekFdeBUWtcavNGBiQHZQSyEFJhCd6fd1TnqwQXRPT6u7C8D_sBVpkd7fQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{stage}}//account_block/accounts/129",
+					"host": [
+						"{{stage}}"
+					],
+					"path": [
+						"",
+						"account_block",
+						"accounts",
+						"129"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "categories",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MTI5LCJleHAiOjE3NDU2NjMxODQsInRva2VuX3R5cGUiOiJsb2dpbiJ9.jmfmKe23fmzMhBBAdwFO6BDBQxwVmekFdeBUWtcavNGBiQHZQSyEFJhCd6fd1TnqwQXRPT6u7C8D_sBVpkd7fQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{stage}}/bx_block_categories/categories",
+					"host": [
+						"{{stage}}"
+					],
+					"path": [
+						"bx_block_categories",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "social_platforms",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJpZCI6MTI5LCJleHAiOjE3NDU2NjMxODQsInRva2VuX3R5cGUiOiJsb2dpbiJ9.jmfmKe23fmzMhBBAdwFO6BDBQxwVmekFdeBUWtcavNGBiQHZQSyEFJhCd6fd1TnqwQXRPT6u7C8D_sBVpkd7fQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{stage}}//bx_block_support/social_platforms",
+					"host": [
+						"{{stage}}"
+					],
+					"path": [
+						"",
+						"bx_block_support",
+						"social_platforms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"data\": {\n    \"type\": \"email_account\",\n    \"user_type\": \"seller\",\n    \"attributes\": {\n      \"email\": \"xyz@yopmail.com\",\n      \"password\": \"Test@123\"\n    }\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{stage}}/bx_block_login/logins",
+					"host": [
+						"{{stage}}"
+					],
+					"path": [
+						"bx_block_login",
+						"logins"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

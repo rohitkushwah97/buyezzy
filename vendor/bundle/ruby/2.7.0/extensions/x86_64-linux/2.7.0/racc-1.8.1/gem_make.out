@@ -1,0 +1,15 @@
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/racc-1.8.1/ext/racc/cparse
+/usr/local/rbenv/versions/ruby-2.7.5/bin/ruby -I /usr/local/rbenv/versions/ruby-2.7.5/lib/ruby/2.7.0 -r ./siteconf20250516-3550229-hxbkab.rb extconf.rb
+creating Makefile
+
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/racc-1.8.1/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/racc-1.8.1/ext/racc/cparse
+make "DESTDIR="
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/racc-1.8.1/ext/racc/cparse
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20250516-3550229-11i1okd/racc

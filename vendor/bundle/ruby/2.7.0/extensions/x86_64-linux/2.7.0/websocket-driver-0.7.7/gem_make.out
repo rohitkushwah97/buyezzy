@@ -1,0 +1,15 @@
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.7/ext/websocket-driver
+/usr/local/rbenv/versions/ruby-2.7.5/bin/ruby -I /usr/local/rbenv/versions/ruby-2.7.5/lib/ruby/2.7.0 -r ./siteconf20250516-3550229-1lyfomu.rb extconf.rb
+creating Makefile
+
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.7/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.7/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.7/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20250516-3550229-epszkm

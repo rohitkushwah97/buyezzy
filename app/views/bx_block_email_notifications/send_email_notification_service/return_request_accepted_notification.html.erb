@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+  <title> Return Request Accepted </title>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+  <div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+    <h1 style="color: #2E86C1; text-align: center;">Return Request Accepted</h1>
+    <p>
+      Dear Customer,
+    </p>
+    <p>Your return request has been accepted for order no.#<%= @order.order_number %> </p>
+    <p>We will pick up your courier within 24-48 working hours. </p>
+    <p>Once your return has been collected it can take up to 7 days for it to arrive at our warehouse. </p> 
+    <ul>
+      <li>PICKUP ADDRESS:</li>
+      <% if @order.shipping_first_name.present? %>
+      <ul>
+        <li><%= @order.shipping_first_name %> <%= @order.shipping_last_name %></li>
+        <li><%= @order.shipping_address_1 %></li>
+        <% if @order.shipping_address_2.present? %>
+        <li><%= @order.shipping_address_2 %></li>
+        <% end %>
+        <li><%= @order.shipping_city %>, <%= @order.shipping_state %> - <%= @order.shipping_zip_code %></li>
+        <li>Phone: <%= @order.shipping_phone_number %></li>
+      </ul>
+      <% end %>
+    </ul>
+    <ul>
+      <li>DETAILS OF RETURN:</li>
+      <% return_detail = @order_item.return_exchange_requests&.last %>
+      <% if return_detail.present? %>
+      <ul>
+        <li>Order No: <%= @order.order_number %></li>
+        <li>Product: <%= @order_item&.catalogue&.product_title %></li>
+        <li>Quantity: <%= @order_item&.quantity %></li>
+        <li>Price: <%= @order_item&.price %></li>
+        <li>Request type: <%= return_detail&.request_type %></li>
+        <li>Request Reason: <%= return_detail&.request_reason %></li>
+        <li>Description: <%= return_detail&.description %></li>
+      </ul>
+      <% end %>
+    </ul>
+    <p>Best regards,</p>
+    <p>The Byezzy Team</p>
+  </div>
+</body>
+</html>

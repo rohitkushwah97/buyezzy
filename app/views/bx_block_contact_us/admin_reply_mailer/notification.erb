@@ -1,0 +1,31 @@
+<div style="max-width: 600px; margin: auto; font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; border-radius: 10px;">
+  <div style="background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <p style="margin-bottom: 10px; font-size: 16px;font-weight: 700; color: #333;">Dear Customer,</p>
+    
+    <div style="margin-bottom: 20px;">
+      <strong style="font-size: 18px; color: #4285f4;">Your <%= @admin_reply.contact.contact_type %></strong>
+    </div>
+
+    <p style="margin-bottom: 20px; font-size: 16px; color: #333;"><%= @admin_reply.contact.title %></p>
+
+    <div style="height: auto; width: 100%; overflow: hidden; margin-bottom: 20px;">
+      <% if @admin_contact_image_url.present? %>
+        <%= image_tag @admin_contact_image_url, style: 'max-width: 100%; height: auto; border-radius: 5px;' %>
+      <% end %>
+    </div>
+
+    <p style="font-size: 16px; color: #333; margin-bottom: 20px;"><%= @admin_reply.contact.description %></p>
+  </div>
+
+  <div style="margin-top: 20px; background-color: #fff; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <p style="font-size: 16px; color: #333; margin-bottom: 20px;"><%= @admin_reply.description %></p>
+
+    <div style="height: auto; width: 100%; overflow: hidden; margin-bottom: 20px;">
+      <% if @admin_image_url.present? %>
+        <%= image_tag @admin_image_url, style: 'max-width: 100%; height: auto; border-radius: 5px;' %>
+      <% end %>
+    </div>
+
+    <p style="color: #333; font-weight: bold; font-size: 16px; margin-top: 20px;">Thank you for using our services.</p>
+  </div>
+</div>

@@ -1,0 +1,8 @@
+@import "arctic_admin/base";
+@import "activeadmin_addons/all";
+@import 'font-awesome/font-awesome';
+@import 'activeadmin/froala_editor_input';
+
+div.cke {
+    overflow: hidden;
+}

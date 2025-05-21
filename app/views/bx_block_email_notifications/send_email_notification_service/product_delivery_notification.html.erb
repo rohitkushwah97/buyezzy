@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title> Your product is delivered </title>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+  <div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+    <h1 style="color: #2E86C1; text-align: center;">Your product is delivered</h1>
+    <p>
+      Dear Vendor,
+    </p>
+   <p>
+    We are thrilled to inform you that your product has been delivered to the customer.
+    The details are as follows
+  </p>
+  <ul>
+    <li>
+      Product Name - <%= @order_item&.catalogue&.product_title %>
+    </li>
+    <li>
+      SKU - <%= @order_item&.catalogue&.sku %>
+    </li>
+    <li>
+      Order No. - <%= @order.order_number %>
+    </li>
+  </ul>
+  <p>
+    Thank you for your cooperation. 
+  </p>
+  <p>Regards,</p>
+  <p>Team Byezzy</p>
+</div>
+</body>
+</html>

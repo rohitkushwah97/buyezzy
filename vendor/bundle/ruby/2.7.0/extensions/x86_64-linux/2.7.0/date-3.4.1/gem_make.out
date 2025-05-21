@@ -1,0 +1,21 @@
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/date-3.4.1/ext/date
+/usr/local/rbenv/versions/ruby-2.7.5/bin/ruby -I /usr/local/rbenv/versions/ruby-2.7.5/lib/ruby/2.7.0 -r ./siteconf20250516-3550229-v6wy71.rb extconf.rb
+checking for rb_category_warn()... no
+checking for timezone in time.h with  -Werror... yes
+checking for altzone in time.h with  -Werror... no
+creating Makefile
+
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/date-3.4.1/ext/date
+make "DESTDIR=" clean
+
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/date-3.4.1/ext/date
+make "DESTDIR="
+compiling date_core.c
+compiling date_parse.c
+compiling date_strftime.c
+compiling date_strptime.c
+linking shared-object date_core.so
+
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/date-3.4.1/ext/date
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 date_core.so ./.gem.20250516-3550229-1wejw4n

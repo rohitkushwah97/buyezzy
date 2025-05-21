@@ -1,0 +1,27 @@
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/yajl-ruby-1.4.3/ext/yajl
+/usr/local/rbenv/versions/ruby-2.7.5/bin/ruby -I /usr/local/rbenv/versions/ruby-2.7.5/lib/ruby/2.7.0 -r ./siteconf20250516-3550229-1daff7h.rb extconf.rb
+creating Makefile
+
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/yajl-ruby-1.4.3/ext/yajl
+make "DESTDIR=" clean
+
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/yajl-ruby-1.4.3/ext/yajl
+make "DESTDIR="
+compiling yajl.c
+compiling yajl_alloc.c
+compiling yajl_buf.c
+compiling yajl_encode.c
+compiling yajl_ext.c
+yajl_ext.c: In function ‘rb_yajl_parser_parse’:
+yajl_ext.c:538:17: warning: variable ‘stat’ set but not used [-Wunused-but-set-variable]
+  538 |     yajl_status stat;
+      |                 ^~~~
+compiling yajl_gen.c
+compiling yajl_lex.c
+compiling yajl_parser.c
+compiling yajl_version.c
+linking shared-object yajl/yajl.so
+
+current directory: /data/home/ubuntu/Desktop/byezzy1-290342-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/yajl-ruby-1.4.3/ext/yajl
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 yajl.so ./.gem.20250516-3550229-52j6ut/yajl

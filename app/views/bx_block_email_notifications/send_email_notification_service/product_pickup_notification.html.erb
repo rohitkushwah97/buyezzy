@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title> Product Sale Notification/ Your Product Is Selling </title>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+  <div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+    <h1 style="color: #2E86C1; text-align: center;">Product Sale Notification/ Your Product Is Selling</h1>
+    <p>
+      Dear Vendor,
+    </p>
+    <p>
+     This is to inform you that your product is ready for pickup. 
+    </p>
+    <p>
+      Product Name - <%= @product.product_title %>
+    </p>
+    <p>
+      Pickup Time – 10AM-12PM
+    </p>
+    <p>
+      Please ensure that the items are ready for collection as per the time mentioned.
+    </p>
+
+    <p>Regards,</p>
+    <p>Team Byezzy</p>
+  </div>
+</body>
+</html>

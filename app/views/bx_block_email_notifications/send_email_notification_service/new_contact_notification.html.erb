@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title> <%= @subject %> </title>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+  <div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+
+    <table style="width: 100%; border-collapse: collapse;">
+      <caption style="font-weight: bold;"><%= @subject %></caption>
+      <tr>
+        <th style="text-align: left; padding: 8px; border: 1px solid #ddd;">Field</th>
+        <th style="text-align: left; padding: 8px; border: 1px solid #ddd;">Value</th>
+      </tr>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">Title</td>
+        <td style="padding: 8px; border: 1px solid #ddd;"><%= @contact.title %></td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">Email</td>
+        <td style="padding: 8px; border: 1px solid #ddd;"><%= @contact.email %></td>
+      </tr>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">Description</td>
+        <td style="padding: 8px; border: 1px solid #ddd;"><%= @contact.description %></td>
+      </tr>
+      <% if @contact.image.attached? %>
+      <tr>
+        <td style="padding: 8px; border: 1px solid #ddd;">Attached Image</td>
+        <td style="padding: 8px; border: 1px solid #ddd;"><%= link_to 'View Image', ENV['BASE_URL'] ? (ENV['BASE_URL'] + Rails.application.routes.url_helpers.rails_blob_path(@contact.image, only_path: true)) : Rails.application.routes.url_helpers.rails_blob_path(@contact.image, only_path: true) %></td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</body>
+</html>

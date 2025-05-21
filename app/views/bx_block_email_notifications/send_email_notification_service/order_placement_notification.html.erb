@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+  <title> Order Confirmation </title>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+  <div style="max-width: 600px; margin: auto; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+    <h1 style="color: #2E86C1; text-align: center;">Order Confirmation</h1>
+    <p>
+      Dear Customer,
+    </p>
+    <p>Thank you for your purchase. </p>
+    <p>
+      We will send you another email when it is in transit. 
+    </p>
+    <ul>
+      <li> Order Details: </li>
+      <ul>
+        <li>Order no. - <%= @order.order_number %></li>
+        <li>Order Summary - <%= @order.order_items.map { |order_item| "(#{order_item.catalogue&.sku} - #{order_item.catalogue&.product_title}, Quantity: #{order_item.quantity})" }.join(', ') %> </li>
+        <li>Order placed on - <%= @order.order_placed_at&.strftime("%B %d, %Y at %I:%M %p") %></li>
+      </ul>
+    </ul>
+    <p> You will receive your order soon. </p>
+    <ul>
+      <li>Shipping Address:</li>
+      <% if @order.shipping_address.present? %>
+      <ul>
+        <li><%= @order.shipping_address.first_name %> <%= @order.shipping_address.last_name %></li>
+        <li><%= @order.shipping_address.address_1 %></li>
+        <% if @order.shipping_address.address_2.present? %>
+        <li><%= @order.shipping_address.address_2 %></li>
+        <% end %>
+        <li><%= @order.shipping_address.city %>, <%= @order.shipping_address.state %> - <%= @order.shipping_address.zip_code %></li>
+        <li>Phone: <%= @order.shipping_address.phone_number %></li>
+      </ul>
+      <% end %>
+      <li>Subtotal - <%= @order.final_price %></li>
+    </ul>
+    <p style="text-align: center; margin: 30px 0;">
+        <a href="<%= "#{ENV['FE_URL']}" %>" style="color: #2E86C1;">Continue Shopping</a>
+    </p>
+    <p style="text-align: center; margin: 30px 0;">
+     Happy Shopping!!!
+    </p>
+    <p>Best regards,</p>
+    <p>The Byezzy Team</p>
+  </div>
+</body>
+</html>
