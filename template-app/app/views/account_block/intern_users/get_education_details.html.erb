@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education Background</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .education-background {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+      color: #3498db;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    strong {
+      color: #2c3e50;
+    }
+
+    .no-record {
+      color: #e74c3c;
+      font-style: italic;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Education Background for <%= @intern_user&.first_name %></h1>
+
+  <div class="education-background">
+    <h2>School Education</h2>
+    <% if @intern_user.school_education.present? %>
+      <% school_name = @intern_user.school_education.school_name.presence || @intern_user.school_education.school&.name %>
+      <p><strong>School Name:</strong> <%= school_name || 'N/A' %></p>
+      <p><strong>Achievements:</strong> <%= @intern_user.school_education&.academic_achievement || 'N/A' %></p>
+      <p><strong>Extracurricular Activities:</strong> <%= @intern_user.school_education&.extracurricular_activity || 'N/A' %></p>
+      <p><strong>Soft Skills:</strong> <%= @intern_user.school_education&.soft_skill || 'N/A' %></p>
+      <p><strong>Interests:</strong> <%= @intern_user.school_education&.interest || 'N/A' %></p>
+      <p><strong>Hobbies:</strong> <%= @intern_user.school_education&.hobby || 'N/A' %></p>
+    <% else %>
+      <p class="no-record">No school education records found.</p>
+    <% end %>
+
+    <h2>University Education</h2>
+    <% if @intern_user.university_education.present? %>
+      <% university_name = @intern_user.university_education.university_name.presence || @intern_user.university_education.university&.name %>
+      <p><strong>University Name:</strong> <%= university_name || 'N/A' %></p>
+      <p><strong>Graduation Year:</strong> <%= @intern_user.university_education&.graduation_year || 'N/A' %></p>
+      <p><strong>Specialization:</strong> <%= @intern_user.university_education&.specialisation || 'N/A' %></p>
+    <% else %>
+      <p class="no-record">No university education records found.</p>
+    <% end %>
+  </div>
+</body>
+</html>

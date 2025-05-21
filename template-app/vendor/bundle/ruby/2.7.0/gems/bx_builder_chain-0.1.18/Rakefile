@@ -1,0 +1,115 @@
+# frozen_string_literal: true
+
+require "bundler/gem_tasks"
+require "rspec/core/rake_task"
+require 'fileutils'
+require "dotenv"
+
+Dotenv.load
+
+RSpec::Core::RakeTask.new(:spec)
+
+require "rubocop/rake_task"
+
+RuboCop::RakeTask.new
+
+task default: %i[spec rubocop]
+
+namespace :test do
+  desc "Creates a dummy Rails app for testing"
+  task :dummy_rails do
+    require 'rails'
+
+    puts "Creating Rails Test App"
+    dummy_path = File.expand_path("spec/dummy", __dir__)
+    system("rm -rf #{dummy_path}") if File.directory?(dummy_path)
+
+    rails_version = Rails::VERSION::STRING
+    rails_new_command = "rails _#{rails_version}_ new #{dummy_path} --skip-bundle --skip-git --skip-keeps --skip-action-mailbox --skip-action-mailer --skip-action-text --skip-active-storage --skip-action-cable --skip-puma --skip-bootsnap --skip-spring --skip-listen --skip-javascript --skip-turbolinks --skip-test --skip-system-test --quiet"
+    unless system(rails_new_command)
+        puts "Error while installing Rails Test App. Exiting."
+        exit 1
+    end
+
+    # Copy .env across
+    env_source_path = File.expand_path(".env", __dir__)
+    env_dest_path = File.join(dummy_path, ".env")
+
+    # Check if the source .env file exists and then copy
+    if File.exist?(env_source_path)
+    FileUtils.cp(env_source_path, env_dest_path)
+    puts "Copied .env file to the dummy Rails app."
+    else
+    puts "No .env file found in the gem root directory."
+    end
+
+    # remove the asset pipeline initializer file
+    puts 'Removing assets initializer...'
+    assets_file_path = File.expand_path("spec/dummy/config/initializers/assets.rb")
+    File.delete(assets_file_path) if File.exist?(assets_file_path)
+
+
+    puts "Adding gems"
+    # adding gem
+    gemfile_path = "#{dummy_path}/Gemfile"
+    open(gemfile_path, 'a') do |f|
+        f.puts "\ngem 'bx_builder_chain', path: '#{File.expand_path('../../', dummy_path)}'"
+        f.puts "\ngem 'pg'"
+    end
+
+    unless system("cd #{dummy_path} && bundle install")
+        puts "Error while installing gems. Exiting."
+        exit 1
+    end
+
+    puts "Generating builder chain rails files"
+    # Installing Gems
+    unless system("cd #{dummy_path} && bundle exec rails g bx_builder_chain:install")
+        puts "Error while Generating builder chain rails files. Exiting."
+        exit 1
+    end
+
+    puts "\nUpdating DB config"
+    # Update db config
+    database_config_path = File.join(dummy_path, 'config', 'database.yml')
+
+    # Create a hash for the new database configuration
+    pg_config = '
+default: &default
+    adapter: postgresql
+    encoding: unicode
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    timeout: 5000
+    host: <%= ENV.fetch("DB_HOSTNAME") { "localhost" } %>
+    username: <%= ENV.fetch("DB_USER") { "postgres" } %>
+    password: <%= ENV.fetch("DB_PASSWORD") { "password" } %>
+    port: <%= ENV.fetch("DB_PORT") { "5432" } %>
+
+development:
+    <<: *default
+    database: <%= ENV.fetch("DB_NAME") { "dev_db" } %>
+
+test:
+    <<: *default
+    database: <%= ENV.fetch("DB_NAME") { "test_db" } %>
+
+production:
+    <<: *default
+    database: <%= ENV.fetch("DB_NAME") { "prod_db" } %>
+'
+
+    # Write the new configuration to database.yml
+    File.open(database_config_path, 'w') do |f|
+        f.write pg_config
+    end
+    
+    puts "Setting up DB"
+    # Installing Gems
+    unless system("cd #{dummy_path} && bundle exec rails db:create && bundle exec rails db:migrate")
+        puts "Error while setting up the db. Exiting."
+        exit 1
+    end
+
+    puts "Created dummy Rails app in spec/dummy"
+  end
+end

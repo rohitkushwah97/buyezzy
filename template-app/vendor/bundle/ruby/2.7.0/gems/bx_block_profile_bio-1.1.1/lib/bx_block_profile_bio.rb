@@ -1,0 +1,22 @@
+# frozen_string_literal: true
+
+require 'builder_base'
+
+require 'account_block'
+require 'bx_block_categories'
+require 'builder_json_web_token'
+require 'bx_block_profile'
+require 'bx_block_location'
+require 'bx_block_request_management'
+require 'bx_block_push_notifications'
+require 'bx_block_favourites'
+require 'bx_block_like'
+require 'active_model_validates_intersection_of'
+require 'acts-as-taggable-on'
+
+require 'bx_block_profile_bio/engine'
+
+# lib/bx_block_profile_bio.rb
+module BxBlockProfileBio
+  # Your code goes here...
+end

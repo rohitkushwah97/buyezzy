@@ -1,0 +1,311 @@
+current directory: /data/home/ubuntu/Desktop/theinternappfinalversion-623716-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/pg-1.5.9/ext
+/usr/local/rbenv/versions/2.7.5/bin/ruby -I /usr/local/rbenv/versions/2.7.5/lib/ruby/site_ruby/2.7.0 extconf.rb
+Calling libpq with GVL unlocked
+checking for pg_config... yes
+Using config values from /usr/bin/pg_config
+Using libpq from /usr/lib/x86_64-linux-gnu
+checking for libpq-fe.h... yes
+checking for libpq/libpq-fs.h... yes
+checking for pg_config_manual.h... yes
+checking for PQconnectdb() in -lpq... yes
+checking for PQconninfo() in libpq-fe.h... yes
+checking for PQsslAttribute() in libpq-fe.h... yes
+checking for PQresultVerboseErrorMessage() in libpq-fe.h... yes
+checking for PQencryptPasswordConn() in libpq-fe.h... yes
+checking for PQresultMemorySize() in libpq-fe.h... yes
+checking for PQenterPipelineMode() in libpq-fe.h... yes
+checking for timegm()... yes
+checking for rb_gc_adjust_memory_usage()... yes
+checking for rb_gc_mark_movable()... yes
+checking for rb_io_wait()... no
+checking for rb_io_descriptor()... no
+checking for unistd.h... yes
+checking for inttypes.h... yes
+checking for C99 variable length arrays... yes
+creating extconf.h
+creating Makefile
+
+current directory: /data/home/ubuntu/Desktop/theinternappfinalversion-623716-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/pg-1.5.9/ext
+make DESTDIR\= sitearchdir\=./.gem.20250212-42328-1wiydoj sitelibdir\=./.gem.20250212-42328-1wiydoj clean
+
+current directory: /data/home/ubuntu/Desktop/theinternappfinalversion-623716-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/pg-1.5.9/ext
+make DESTDIR\= sitearchdir\=./.gem.20250212-42328-1wiydoj sitelibdir\=./.gem.20250212-42328-1wiydoj
+compiling gvl_wrappers.c
+In file included from pg.h:60,
+                 from gvl_wrappers.c:6:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from gvl_wrappers.c:6:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg.c
+In file included from pg.h:60,
+                 from pg.c:48:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg.c:48:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_binary_decoder.c
+In file included from pg.h:60,
+                 from pg_binary_decoder.c:8:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_binary_decoder.c:8:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_binary_encoder.c
+In file included from pg.h:60,
+                 from pg_binary_encoder.c:7:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_binary_encoder.c:7:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_coder.c
+In file included from pg.h:60,
+                 from pg_coder.c:6:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_coder.c:6:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_connection.c
+In file included from pg.h:60,
+                 from pg_connection.c:7:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_connection.c:7:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_copy_coder.c
+In file included from pg.h:60,
+                 from pg_copy_coder.c:6:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_copy_coder.c:6:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_errors.c
+In file included from pg.h:60,
+                 from pg_errors.c:6:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_errors.c:6:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_record_coder.c
+In file included from pg.h:60,
+                 from pg_record_coder.c:6:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_record_coder.c:6:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_result.c
+In file included from pg.h:60,
+                 from pg_result.c:7:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_result.c:7:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_text_decoder.c
+In file included from pg.h:60,
+                 from pg_text_decoder.c:32:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_text_decoder.c:32:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_text_encoder.c
+In file included from pg.h:60,
+                 from pg_text_encoder.c:43:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_text_encoder.c:43:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_tuple.c
+In file included from pg.h:60,
+                 from pg_tuple.c:1:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_tuple.c:1:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_type_map.c
+In file included from pg.h:60,
+                 from pg_type_map.c:7:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_type_map.c:7:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_type_map_all_strings.c
+In file included from pg.h:60,
+                 from pg_type_map_all_strings.c:9:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_type_map_all_strings.c:9:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_type_map_by_class.c
+In file included from pg.h:60,
+                 from pg_type_map_by_class.c:10:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_type_map_by_class.c:10:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_type_map_by_column.c
+In file included from pg.h:60,
+                 from pg_type_map_by_column.c:7:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_type_map_by_column.c:7:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_type_map_by_mri_type.c
+In file included from pg.h:60,
+                 from pg_type_map_by_mri_type.c:10:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_type_map_by_mri_type.c:10:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_type_map_by_oid.c
+In file included from pg.h:60,
+                 from pg_type_map_by_oid.c:7:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_type_map_by_oid.c:7:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_type_map_in_ruby.c
+In file included from pg.h:60,
+                 from pg_type_map_in_ruby.c:7:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_type_map_in_ruby.c:7:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+compiling pg_util.c
+In file included from pg.h:60,
+                 from pg_util.c:7:
+/usr/include/postgresql/pg_config.h:817: warning: "restrict" redefined
+  817 | #define restrict __restrict__
+      | 
+In file included from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby/ruby.h:24,
+                 from /usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/ruby.h:33,
+                 from pg.h:21,
+                 from pg_util.c:7:
+/usr/local/rbenv/versions/2.7.5/include/ruby-2.7.0/x86_64-linux/ruby/config.h:59: note: this is the location of the previous definition
+   59 | #define restrict __restrict
+      | 
+linking shared-object pg_ext.so
+
+current directory: /data/home/ubuntu/Desktop/theinternappfinalversion-623716-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/pg-1.5.9/ext
+make DESTDIR\= sitearchdir\=./.gem.20250212-42328-1wiydoj sitelibdir\=./.gem.20250212-42328-1wiydoj install
+/usr/bin/install -c -m 0755 pg_ext.so ./.gem.20250212-42328-1wiydoj
+installing pg_ext libraries

@@ -1,0 +1,6 @@
+Gemfile.lock
+/coverage/
+/pkg/
+.rspec_status
+.coveralls.yml
+.ruby-version

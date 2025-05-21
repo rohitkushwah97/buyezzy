@@ -1,0 +1,19 @@
+
+
+wb = xlsx_package.workbook
+
+
+headers = ["project_name", "start_date", "end_date","project_type","admin_id","manager_id",
+  "co_manager_id","assessor_ids"]
+
+wb.add_worksheet(name: "Projects") do |sheet|
+  sheet.column_widths(*[20]*headers.size)
+
+  
+  sheet.add_row headers
+
+  
+  @projects.each do |project|
+    sheet.add_row [project.name, project.start_date, project.end_date, project.project_type, project.account_id, project.manager_id, project.co_manager_id, "#{project.assessor_ids.join(',')}"]
+  end
+end

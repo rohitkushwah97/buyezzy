@@ -1,0 +1,46 @@
+@import "arctic_admin/base";
+$primary-color: #2dbb43;
+@import 'activeadmin/quill_editor/quill.snow';
+@import 'activeadmin/quill_editor_input';
+
+// Style for title bar on the right side
+#titlebar_right {
+  .action_items {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+// Style adjustments for the Quill editor
+.active_admin .quill-editor {
+  margin-left: 25px; // Adjust as needed to move it further right
+}
+
+// Hide the "Surveys" menu item
+#surveys.menu_item {
+  display: none !important;
+}
+
+// Hide the "Remove" button in has_many fields
+.has_many_container.options .has_many_remove {
+  display: none !important;
+}
+
+// Add styles for the toggle button
+.button {
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+
+  &.block {
+    background-color: red;
+    padding: 2px;
+    font-size: 15px;
+  }
+
+  &.unblock {
+    background-color: green;
+    padding: 2px;
+    font-size: 15px;
+  }
+}

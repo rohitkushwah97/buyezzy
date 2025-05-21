@@ -1,0 +1,277 @@
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f5f5f5;
+    }
+
+    div.page_wrapper {
+        max-width: 1100px;
+        margin: 5% auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+
+    div.form_wrapper {
+        width: 50%;
+        padding: 1%;
+        float: left;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        box-sizing: border-box;
+        height: 340px;
+    }
+
+    div.fullwidth {
+        width: 100%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        width: 93%;
+        padding: 8px 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+    div.console_wrapper {
+        width: 100%;
+        margin-top: 20px;
+        padding: 15px;
+        background-color: #000;
+        color: #0f0;
+        font-family: 'Courier New', monospace;
+        border-radius: 5px;
+        min-height: 150px;
+        box-sizing: border-box;
+        overflow: auto;
+    }
+
+    .console_message {
+        white-space: pre-line; /* To respect new lines in the content */
+    }
+
+    div.fullwidth .form-group {
+        width: 80%;
+        float: left;
+    }
+
+    div.fullwidth .actions {
+        float: right;
+        margin-top: 17px;
+    }
+    #file_list button {
+        margin-left: 10px;
+    }
+</style>
+
+<div class="page_wrapper">
+    <div class="form_wrapper">
+        <h2>Upload Files</h2>
+        <%= form_tag(bx_builder_chain_documents_upload_path, multipart: true, method: :post, id: 'upload_form') do %>
+            <div class="form-group">
+                <label for="files">Choose files to upload:</label>
+                <%= file_field_tag 'files[]', multiple: true, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+                <label for="files">Choose files to upload:</label>
+                <%= file_field_tag 'files[]', multiple: true, class: 'form-control' %>
+            </div>
+
+            <div class="form-group">
+                <label for="current_user_groups">User ID:</label>
+                <%= text_field_tag 'current_user_groups', 1, class: 'form-control' %>
+            </div>
+
+            <div class="actions">
+                <%= submit_tag "Upload", class: 'btn btn-primary' %>
+            </div>
+        <% end %>
+    </div>
+
+    <div class="form_wrapper">
+        <h2>Ask Question</h2>
+
+        <%= form_tag(bx_builder_chain_ask_path, method: :post, id: 'ask_form') do %>
+            <div class="form-group">
+                <label for="question">Ask a question:</label>
+                <%= text_area_tag 'question', nil, class: 'form-control', rows: 3 %>
+            </div>
+
+            <div class="form-group">
+                <label for="current_user_groups">User Groups:</label>
+                <%= text_field_tag 'current_user_groups', 1, class: 'form-control' %>
+            </div>
+
+            <div class="actions">
+                <%= submit_tag "Submit Question", class: 'btn btn-primary' %>
+            </div>
+        <% end %>
+    </div>
+    <div style="clear: both;"></div>
+    <div class="form_wrapper fullwidth">
+        <h2>Retrieve Files</h2>
+
+        <%= form_tag(bx_builder_chain_documents_list_path, method: :get, id: 'list_form') do %>
+            <div class="form-group">
+                <label for="current_user_groups">Enter User ID:</label>
+                <%= text_field_tag 'current_user_groups', 1, class: 'form-control' %>
+            </div>
+
+            <div class="actions">
+                <%= submit_tag "Retrieve Files", class: 'btn btn-primary' %>
+            </div>
+        <% end %>
+
+        <div style="clear: both;"></div>
+        <ul id="file_list"></ul>
+    </div>
+    <div style="clear: both;"></div>
+    <!-- Console box -->
+    <div class="console_wrapper">
+        <div class="console_message">
+            <%= flash[:console_message] || "Awaiting response..." %>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () { // Selecting both forms
+        const uploadForm = document.querySelector('#upload_form');
+        const askForm = document.querySelector('#ask_form');
+        const consoleBox = document.querySelector('.console_message');
+
+        // Attach event listener to both forms
+        [uploadForm, askForm].forEach(form => {
+            form.addEventListener('submit', async function (event) {
+                event.preventDefault();
+                // Prevent default form submission
+
+                // Show loading message
+                consoleBox.textContent = "Processing...";
+
+                try {
+                    let response = await fetch(event.target.action, {
+                        method: 'POST',
+                        body: new FormData(event.target) // This gathers form data
+                    });
+
+                    if (response.ok) {
+                        let data = await response.json();
+                        consoleBox.textContent = data.answer || data.success || "Success!";
+                    } else {
+                        let errorData = await response.json();
+                        consoleBox.textContent = errorData.error || "An error occurred.";
+                    }
+                } catch (error) {
+                    consoleBox.textContent = "Failed to submit. Please try again.";
+                }
+            });
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+        const listForm = document.querySelector('#list_form');
+        const fileList = document.querySelector('#file_list');
+        const consoleBox = document.querySelector('.console_message');
+
+        listForm.addEventListener('submit', async function (event) {
+            event.preventDefault();
+
+            consoleBox.textContent = "Retrieving files...";
+            const current_user_groups = event.target.current_user_groups.value;
+            const endpoint = `${
+                event.target.action
+            }?current_user_groups=${current_user_groups}`;
+
+            try {
+                let response = await fetch(endpoint, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    let files = await response.json();
+
+                    fileList.innerHTML = ''; // Clear the file list
+
+                    const current_user_groups = event.target.current_user_groups.value;
+                    files.forEach(file => {
+                        let listItem = document.createElement('li');
+                        listItem.textContent = file.name; // Assuming the file object has a 'name' property
+
+                        let deleteBtn = document.createElement('button');
+                        deleteBtn.textContent = "Delete";
+                        deleteBtn.addEventListener('click', async function () {
+                            event.preventDefault();
+                            await deleteFile(file.id, current_user_groups); // Assuming the file object has an 'id' property
+                        });
+
+                        listItem.appendChild(deleteBtn);
+                        fileList.appendChild(listItem);
+                    });
+
+                    consoleBox.textContent = "Files retrieved successfully.";
+                } else {
+                    let errorData = await response.json();
+                    consoleBox.textContent = errorData.error || "An error occurred while retrieving files.";
+                }
+            } catch (error) {
+                consoleBox.textContent = "Failed to retrieve files. Please try again.";
+            }
+        });
+
+        async function deleteFile(fileId, current_user_groups) {
+            consoleBox.textContent = "Deleting file...";
+
+            try {
+                let response = await fetch('/bx_builder_chain/documents/delete', {
+                    method: 'DELETE',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(
+                        {ids: [fileId], current_user_groups: current_user_groups}
+                    )
+                });
+
+                if (response.ok) {
+                    consoleBox.textContent = "File deleted successfully.";
+                    document.querySelector('#list_form .actions input').click()
+                } else {
+                    let errorData = await response.json();
+                    consoleBox.textContent = errorData.error || "An error occurred while deleting the file.";
+                }
+            } catch (error) {
+                consoleBox.textContent = "Failed to delete file. Please try again.";
+            }
+        }
+    });
+</script>

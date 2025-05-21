@@ -1,0 +1,21 @@
+current directory: /data/home/ubuntu/Desktop/theinternappfinalversion-623716-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/json-2.10.1/ext/json/ext/parser
+/usr/local/rbenv/versions/2.7.5/bin/ruby -I /usr/local/rbenv/versions/2.7.5/lib/ruby/site_ruby/2.7.0 extconf.rb
+checking for rb_enc_interned_str() in ruby.h... no
+checking for rb_hash_new_capa() in ruby.h... no
+checking for rb_hash_bulk_insert() in ruby.h... yes
+checking for rb_category_warn() in ruby.h... no
+checking for strnlen() in string.h... yes
+checking for whether -std=c99 is accepted as CFLAGS... yes
+creating Makefile
+
+current directory: /data/home/ubuntu/Desktop/theinternappfinalversion-623716-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/json-2.10.1/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20250212-42328-tf0xgx sitelibdir\=./.gem.20250212-42328-tf0xgx clean
+
+current directory: /data/home/ubuntu/Desktop/theinternappfinalversion-623716-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/json-2.10.1/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20250212-42328-tf0xgx sitelibdir\=./.gem.20250212-42328-tf0xgx
+compiling parser.c
+linking shared-object json/ext/parser.so
+
+current directory: /data/home/ubuntu/Desktop/theinternappfinalversion-623716-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/json-2.10.1/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20250212-42328-tf0xgx sitelibdir\=./.gem.20250212-42328-tf0xgx install
+/usr/bin/install -c -m 0755 parser.so ./.gem.20250212-42328-tf0xgx/json/ext

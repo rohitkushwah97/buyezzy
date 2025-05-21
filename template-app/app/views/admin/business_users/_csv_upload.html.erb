@@ -1,0 +1,9 @@
+<%= active_admin_form_for :csv_upload, url: import_csv_admin_business_users_path, html: { multipart: true } do |f| %>
+    <%= f.inputs do %>
+      <%= f.input :csv_file, as: :file, label: 'Upload CSV file' %>
+    <% end %>
+    <%= f.actions do %>
+      <%= f.action :submit, label: 'Import CSV' %>
+    <% end %>
+  <% end %>
+  

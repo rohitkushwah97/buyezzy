@@ -1,0 +1,41 @@
+<style>
+  .back_button{
+    background-color: darkgray;
+    text-align: center;
+    width: 100px;
+    padding: 4px;
+    border-radius: 8px;
+    color: #fff;
+  }
+</style>
+
+<h3>Applicants</h3>
+
+<table aria-label="List of applicants">
+  <thead>
+    <tr>
+       <th>Image</th>
+      <th>Full Name</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Education</th>
+      <th>Match Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @applicants.each do |applicant| %>
+      <tr>
+        <td><%= applicant.profile&.photo&.attached? ? image_tag(applicant.profile.photo , style:"width:30px; height:30px;") : "N/A" %></td>
+        <td><%= applicant.full_name || "N/A" %></td>
+        <td><%= applicant.profile&.city&.name || "N/A" %></td>
+        <td><%= applicant.profile&.country&.name || "N/A" %></td>
+        <td><%= get_education(applicant) %></td>
+         <td><%= get_match(applicant, @internship) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div style="margin-top: 20px; display: flex; justify-content: center;">
+  <%= link_to 'Back', admin_internships_path, class: 'back_button'%></td>
+</div>

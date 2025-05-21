@@ -1,0 +1,16 @@
+current directory: /data/home/ubuntu/Desktop/theinternappfinalversion-623716-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+/usr/local/rbenv/versions/2.7.5/bin/ruby -I /usr/local/rbenv/versions/2.7.5/lib/ruby/site_ruby/2.7.0 extconf.rb
+creating Makefile
+
+current directory: /data/home/ubuntu/Desktop/theinternappfinalversion-623716-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20250212-42328-v0hd30 sitelibdir\=./.gem.20250212-42328-v0hd30 clean
+
+current directory: /data/home/ubuntu/Desktop/theinternappfinalversion-623716-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20250212-42328-v0hd30 sitelibdir\=./.gem.20250212-42328-v0hd30
+compiling ruby_http_parser.c
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.so
+
+current directory: /data/home/ubuntu/Desktop/theinternappfinalversion-623716-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/http_parser.rb-0.6.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20250212-42328-v0hd30 sitelibdir\=./.gem.20250212-42328-v0hd30 install
+/usr/bin/install -c -m 0755 ruby_http_parser.so ./.gem.20250212-42328-v0hd30

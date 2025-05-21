@@ -1,0 +1,37 @@
+<h3>Questions List</h3>
+
+<table aria-label="List of Business and Intern Questions">
+  <thead>
+    <tr>
+      <th>S.No</th>
+      <th>Question Id</th>
+      <th>Default weight</th>
+      <th>Intern Characteristics</th>
+      <th>Business Questions</th>
+      <th>Intern Questions</th>
+      <th>Options</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <% @version.questions.each_with_index do |question, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= question.id %></td>
+        <td><%= question.default_weight %></td>
+        <% intern_characteristic = BxBlockSurveys::InternCharacteristic.find_by(id: question.intern_characteristic_id) %>
+        <td><%= intern_characteristic.present? ? intern_characteristic.name : 'N/A' %></td>
+        <td><%= question.business_question %></td>
+        <td><%= question.intern_question %></td>
+        <td>
+          <% question.options.each do |option| %>
+            <%= option.name.presence || 'Unnamed Option' %><br>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+  <%if @version.survey.versions.last == @version%>
+    <td><%= link_to "Edit", edit_admin_surveys_question_path(@version.survey), class: 'button' %></td>
+  <%end%>
+</table>

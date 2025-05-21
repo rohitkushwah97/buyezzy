@@ -1,0 +1,13 @@
+<h3 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #2c3e50; text-align: center; margin-bottom: 20px;">
+  Import Survey Questions from CSV
+</h3>
+
+<%= form_tag import_csv_admin_question_surveys_path, multipart: true, method: :post, style: "max-width: 400px; margin: 0 auto; background-color: #ecf0f1; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);" do %>
+  <div style="margin-bottom: 20px;">
+    <%= label_tag :csv_file, "Select CSV File", style: "font-weight: 600; color: #34495e; display: block; margin-bottom: 8px;" %>
+    <%= file_field_tag :csv_file, accept: '.csv', style: "width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 6px; background: linear-gradient(135deg, #3498db, #2980b9); color: white; font-size: 14px; cursor: pointer; transition: background-color 0.3s ease;" %>
+  </div>
+  <div style="text-align: center;">
+    <%= submit_tag "Import CSV", style: "background-color: #1abc9c; color: white; padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: 600; transition: background-color 0.3s ease;" %>
+  </div>
+<% end %>

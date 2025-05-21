@@ -1,0 +1,4 @@
+include:
+  - project: 'builder/builder-bx/Bx/blocks/ruby/blocks_pre_staging'
+    ref: master
+    file: '.gitlab-ci-block.yml'

@@ -1,0 +1,107 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applicants for <%= @internship.title %></title>
+  <link rel="stylesheet" href="/assets/shared_styles.css">
+  <style>
+    /* Page-specific styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #2c3e50;
+      color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #e2e2e2;
+    }
+
+    caption {
+      caption-side: top;
+      text-align: center;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    .no-applicants-message {
+      font-size: 18px;
+      color: #ff6347;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .no-applicants-message strong {
+      color: red;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      font-size: 16px;
+      color: #2c3e50;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content-container">
+    <h1>Applicants for <%= @internship.title %></h1>
+
+    <% if @applicants.present? %>
+      <table>
+        <caption>List of applicants who have applied for this internship</caption>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @applicants.each do |applicant| %>
+            <tr>
+              <td>
+                <a href="<%= main_app.admin_intern_user_path(applicant.id) %>" class="applicant-link">
+                  <%= applicant.full_name %>
+                </a>
+              </td>
+              <td><%= applicant.email %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% else %>
+      <p class="no-applicants-message">
+        <strong>No applicants have applied for this internship yet.</strong>
+      </p>
+    <% end %>
+
+    <a href="<%= request.referrer || root_path %>" class="back-link">Go Back</a>
+  </div>
+
+</body>
+</html>

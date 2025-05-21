@@ -1,0 +1,21 @@
+<script type="text/javascript">
+  (function() {
+  var app = {
+    launchApp: function() {
+      window.location.replace("theinternAppFinalVersion://<%= @message%>");
+      this.timer = setTimeout(this.openWebApp, 1000);
+    },
+
+    openWebApp: function() {
+      if(navigator.userAgent.toLowerCase().indexOf("android") > -1){
+            window.location.href = "https://play.google.com/store/apps/details?id=com.whatsapp"
+      }else{
+        alert("You will be redirected to App store!");
+        window.location.href = "https://apps.apple.com/us/app/snapchat/id447188370"
+      }
+    }
+  };
+
+  app.launchApp();
+})();
+</script>

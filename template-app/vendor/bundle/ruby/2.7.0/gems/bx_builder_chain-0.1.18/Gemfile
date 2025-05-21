@@ -1,0 +1,28 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+# Specify your gem's dependencies in bx_builder_chain.gemspec
+gemspec
+
+gem "rake", "~> 13.0"
+gem "rspec", "~> 3.0"
+gem "rubocop", "~> 1.21"
+gem "sequel", "~> 5.71"
+gem "pg"
+gem 'dotenv'
+# gem "pgvector", path: '../pgvector-ruby'
+gem "ruby-openai"
+gem "pdf-reader"
+gem "nokogiri"
+gem "docx"
+gem "roo"
+gem "baran"
+gem "async"
+
+gem "pry"
+
+gem "rails"
+gem "rspec-rails"
+gem 'fakeredis'
+gem 'database_cleaner'

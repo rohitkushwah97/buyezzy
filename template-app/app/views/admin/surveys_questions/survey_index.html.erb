@@ -1,0 +1,24 @@
+<h3>Survey List</h3>
+
+<table aria-label="List of Surveys">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Role</th>
+      <th>Questions Count</th> 
+      <th></th>      
+    </tr>
+  </thead>
+  <tbody>
+    <% @surveys.each do |survey| %>
+      <tr>
+        <td><%= survey.id %></td>
+        <td><%= survey.name %></td>
+        <td><%= link_to survey.role.name, admin_role_path(survey.role) %></td>
+        <td><%= survey.versions&.last&.questions&.count %></td>
+        <td><%= link_to "view", admin_surveys_question_path(survey), class: 'button' %> <%= link_to "edit", edit_admin_surveys_question_path(survey), class: 'button' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

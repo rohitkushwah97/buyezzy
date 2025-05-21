@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/builder_base/cli/create_builder_app'
+
+BuilderBase::Cli.logger.level = Logger::DEBUG
+
+options = BuilderBase::Cli::Options.parse(args: ARGV, env: ENV)
+BuilderBase::Cli::CreateBuilderApp.execute(options: options)

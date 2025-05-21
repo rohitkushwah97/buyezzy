@@ -1,0 +1,19 @@
+current directory: /data/home/ubuntu/Desktop/theinternappfinalversion-623716-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+/usr/local/rbenv/versions/2.7.5/bin/ruby -I /usr/local/rbenv/versions/2.7.5/lib/ruby/site_ruby/2.7.0 extconf.rb
+creating Makefile
+
+current directory: /data/home/ubuntu/Desktop/theinternappfinalversion-623716-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20250212-42328-hdugy8 sitelibdir\=./.gem.20250212-42328-hdugy8 clean
+
+current directory: /data/home/ubuntu/Desktop/theinternappfinalversion-623716-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20250212-42328-hdugy8 sitelibdir\=./.gem.20250212-42328-hdugy8
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+
+current directory: /data/home/ubuntu/Desktop/theinternappfinalversion-623716-ruby/template-app/vendor/bundle/ruby/2.7.0/gems/byebug-11.1.3/ext/byebug
+make DESTDIR\= sitearchdir\=./.gem.20250212-42328-hdugy8 sitelibdir\=./.gem.20250212-42328-hdugy8 install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20250212-42328-hdugy8/byebug

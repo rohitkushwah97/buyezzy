@@ -1,0 +1,5 @@
+class RenameColumnAplliedJobToAppliedJob < ActiveRecord::Migration[6.0]
+  def change
+    rename_column :applied_jobs, :apllied_job_title, :applied_job_title
+  end
+end

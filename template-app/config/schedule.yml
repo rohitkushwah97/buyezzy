@@ -1,0 +1,38 @@
+change_internship_status_job:
+  cron: "0 1 * * *" # Run at 01:00 AM every day
+  class: "BxBlockNavmenu::ChangeInternshipStatusJob"
+  queue: default
+
+incomplete_applications_worker:
+  cron: "5 0 * * *" # Runs every day at 12:05 AM
+  class: "BxBlockAppointmentManagement::IncompleteApplicationsWorker"
+  queue: default
+
+internship_posting_expiration_worker:
+  cron: "5 0 * * *"   # Runs every day at 12:05 AM
+  class: "BxBlockAppointmentManagement::InternshipPostingExpirationWorker"
+  queue: default
+
+pending_survey_notification_worker:
+  cron: "5 0 * * *"   # Runs every day at 12:05 AM
+  class: "BxBlockNotifications::PendingSurveyNotificationWorker"
+  queue: default
+
+inactive_user_notification:
+  cron: "* * * * *"
+  class: "AccountBlock::InactiveUserNotificationJob"
+  queue: default
+
+auto_reject_offers_job:
+  cron: "0 0 * * *"   # Runs every day at 00:00
+  class: "BxBlockSurveys::AutoRejectOfferJob"
+  queue: default
+
+auto_reject_expired_requests:
+  cron: "0 0 * * *"
+  class: "BxBlockRequestManagement::AutoRejectExpiredRequestsJob"
+
+chatbot_auto_terminate_interview:
+  cron: "*/1 * * * *" # every 1 minute
+  class: "Chatbot::AutoTerminateInterviewJob"
+  queue: default

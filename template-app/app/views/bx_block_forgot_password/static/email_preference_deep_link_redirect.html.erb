@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    function detectApp() {
+      const token = "<%= @token %>";
+      const androidAppURL = `etohapp://NewPassword?token=${token}`;
+      const iosAppURL = `etohapp-ios://NewPassword?token=${token}`;
+      const playStoreURL = "https://play.google.com/store/apps/details?id=com.yourapp.package";
+      const appStoreURL = "https://apps.apple.com/in/app/your-app/id1234567890";
+      const defaultUrl = "https://apps.apple.com/in/app/whatsapp-messenger/id310633997";
+
+      let timeout;
+      let start = new Date().getTime();
+      let isAndroid = navigator.userAgent.toLowerCase().indexOf("android") > -1;
+      let isIOS = navigator.userAgent.toLowerCase().indexOf("iphone") > -1 || navigator.userAgent.toLowerCase().indexOf("ipad") > -1;
+
+      let appURL = isAndroid ? androidAppURL : (isIOS ? iosAppURL : null);
+      let storeURL = isAndroid ? playStoreURL : (isIOS ? appStoreURL : null);
+
+      if (appURL && storeURL) {
+        timeout = setTimeout(function () {
+          window.location = storeURL;
+        }, 2000);
+
+        window.location = appURL;
+
+        window.onblur = function () {
+          let end = new Date().getTime();
+          if (end - start < 1500) {
+            clearTimeout(timeout);
+          }
+        };
+      } else {
+        window.location = defaultUrl;
+      }
+    }
+
+    window.onload = detectApp;
+  </script>
+</head>
+<body>
+  <p>Please wait, processing...</p>
+</body>
+</html>

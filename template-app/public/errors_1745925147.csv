@@ -1,0 +1,4 @@
+email,password,date_of_birth,Note: (*Please use yyyy/mm/dd format for date of birth),error
+1yup1@yopmail.com,Password@123,2000/12/03,,Email The email address is already taken. Please try another.
+2yup1@yopmail.com,Password@124,2000/12/03,,Email The email address is already taken. Please try another.
+3yup1@yopmail.com,Password@125,2000/12/03,,Email The email address is already taken. Please try another.

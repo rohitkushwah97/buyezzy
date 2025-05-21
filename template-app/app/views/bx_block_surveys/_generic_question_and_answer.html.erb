@@ -1,0 +1,78 @@
+
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+
+  th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333;
+    
+  }
+
+  td {
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+
+  .no-answers {
+    font-size: 1rem;
+    color: #e74c3c;
+    text-align: center; /* Center the text */
+  }
+
+  .caption {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+</style>
+
+
+  <table>
+  <caption class="caption"><strong>Generic Questions and Answers</strong></caption>
+
+    <thead>
+      <tr>
+        <th>Internship</th>
+        <th>Question</th>
+        <th>Answer</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% if @generic_answers.present? %>
+      <% grouped_answers = @generic_answers.group_by { |answer| answer.internship.id } %>
+      <% grouped_answers.each do |internship_id, answers| %>
+        <% internship = answers.first.internship %>
+        <% answers.each_with_index do |answer, index| %>
+          <tr>
+            <% if index == 0 %> <!-- Only display internship title on the first answer -->
+              <td rowspan="<%= answers.size %>"><%= internship.title %></td>
+            <% end %>
+            <td><%= find_generic(answer) %></td>
+            <td><%= answer.answer %></td>
+          </tr>
+        <% end %>
+      <% end %>
+    <% else %>
+      <tr>
+        <td colspan="3" class="no-answers">No generic answers found for this business user.</td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>

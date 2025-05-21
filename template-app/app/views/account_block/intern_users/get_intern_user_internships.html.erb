@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applied Internships</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .internships {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+      color: #3498db;
+      margin-bottom: 15px;
+    }
+
+    .internship-item {
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    strong {
+      color: #2c3e50;
+    }
+
+    .no-record {
+      color: #e74c3c;
+      font-style: italic;
+      text-align: center;
+    }
+
+    .answers {
+      margin-top: 15px;
+      background-color: #f9f9f9;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .completed {
+      font-weight: bold;
+      color: #3498db;
+    }
+  </style>
+</head>
+<body>
+  <h1>Applied Internships for <%= @intern_user&.full_name %></h1>
+
+  <div class="internships">
+    <h2>Applied Internships</h2>
+    <% if @internships_with_answers.present? %>
+      <% @internships_with_answers.each do |internship_with_answers| %>
+        <div class="internship-item">
+          <p><strong>Internship Title:</strong> <%= internship_with_answers[:internship].title %></p>
+          <p><strong>Description:</strong> <%= internship_with_answers[:internship].description || 'N/A' %></p>
+          <p><strong>Industry:</strong> <%= internship_with_answers[:internship].industry&.name || 'N/A' %></p>
+          <p><strong>Role:</strong> <%= internship_with_answers[:internship].role&.name || 'N/A' %></p>
+          <p><strong>Location:</strong> <%= internship_with_answers[:internship].work_location&.name || 'N/A' %></p>
+          <p><strong>Start Date:</strong> <%= internship_with_answers[:internship].start_date&.strftime('%B %d, %Y') || 'N/A' %></p>
+          <p><strong>End Date:</strong> <%= internship_with_answers[:internship].end_date&.strftime('%B %d, %Y') || 'N/A' %></p>
+          <p><strong>Monthly Salary:</strong> <%= number_to_currency(internship_with_answers[:internship].monthly_salary) || 'N/A' %></p>
+          <p><strong>Application Date:</strong> <%= internship_with_answers[:internship].created_at.strftime('%B %d, %Y') %></p>
+          
+          <div class="answers">
+            <h3>Generic Questions and Answers</h3>
+            <% if internship_with_answers[:answers].present? %>
+              <p class="completed">Last Updated: <%= internship_with_answers[:completed] %></p>
+              <% internship_with_answers[:answers].each do |answer| %>
+                <p><strong>Question:</strong> <%= answer.intern_user_generic_question.question %></p>
+                <p><strong>Answer:</strong> <%= answer.answer || 'No answer provided' %></p>
+              <% end %>
+            <% else %>
+              <p>No answers provided for this internship.</p>
+            <% end %>
+          </div>
+        </div>
+        <hr>
+      <% end %>
+    <% else %>
+      <p class="no-record">No internships applied for.</p>
+    <% end %>
+  </div>
+</body>
+</html>

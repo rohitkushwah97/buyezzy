@@ -1,0 +1,46 @@
+shipments_attributes:
+  - full_truck: false
+    load_description: Dummy load description
+    cod_value_attributes:
+      amount: 200
+      currency: RS
+    shipment_value_attributes:
+      amount: 200
+      currency: RS
+    delivery_attributes:
+      address: 189, Shiv City, Indore
+      city: Indore
+      country: India
+      email: delivery.demo@mailinator.com
+      name: Deliver user
+      phone: '1234567890'
+      instructions: delivery instructions
+      arrival_window_attributes:
+        begin_at: 2020-10-09 07:13:07 UTC
+        end_at: 2020-10-15 07:13:07 UTC
+      coordinate_attributes:
+        latitude: '22.650562'
+        longitude: '75.833753'
+    pickup_attributes:
+      address: 18, Vijay Nagar, Indore
+      city: Indore
+      country: India
+      email: pickup.demo@mailinator.com
+      name: Pickup user
+      phone: '1234567891'
+      instructions: pickup instructions
+      arrival_window_attributes:
+        begin_at: 2020-10-09 07:13:07 UTC
+        end_at: 2020-10-15 07:13:07 UTC
+      coordinate_attributes:
+        latitude: '22.759146'
+        longitude: '75.891044'
+    items_attributes:
+      - weight: 0.1
+        quantity: 1
+        stackable: true
+        item_type: PALLET
+        dimension_attributes:
+          height: 1
+          length: 10
+          width: 10

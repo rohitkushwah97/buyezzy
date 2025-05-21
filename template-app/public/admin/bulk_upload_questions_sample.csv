@@ -1,0 +1,3 @@
+role_name,Q1_default_weight,Q1_business_question,Q1_intern_question,Q1_intern_characteristic,Q1_option_1,Q1_option_2,Q1_option_3,Q1_option_4,Q1_option_5,Q2_default_weight,Q2_business_question,Q2_intern_question,Q2_intern_characteristic,Q2_option_1,Q2_option_2,Q2_option_3,Q2_option_4,Q2_option_5
+,,,,,,,,,,,,,,,,,,
+*Note: (1. You can not add more than 20 questions for single role. 2. Role should be present on database. 3. Sum of all default_weights of all questions for single role is must be exactly 100),,,,,,,,,,,,,,,,,,

@@ -1,0 +1,156 @@
+<%= content_for :title, "Account Details" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .account-details {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+
+    table.table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+    }
+
+    table.table th, table.table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    table.table th {
+      background-color: transparent;
+      border-right: 2px solid #ddd; /* Adds a thicker line between the header and data */
+    }
+
+    table.table td {
+      font-size: 16px;
+      color: #555;
+    }
+
+    table.table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    table.table tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    .no-record {
+      color: #e74c3c;
+      font-style: italic;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="account-details">
+    <h1>Account Details</h1>
+
+    <!-- Add the description using the caption element -->
+    <table class="table">
+      <caption>Details of the account, including personal information, status, and preferences.</caption>  <!-- Table description -->
+      
+      <tr>
+        <th>First Name</th>
+        <td><%= @account.first_name.presence || 'N/A' %></td>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <td><%= @account.last_name.presence || 'N/A' %></td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td><%= @account.email.presence || 'N/A' %></td>
+      </tr>
+      <tr>
+        <th>Phone Number</th>
+        <td><%= @account.full_phone_number.presence || 'N/A' %></td>
+      </tr>
+      <tr>
+        <th>Country Code</th>
+        <td><%= @account.country_code.presence || 'N/A' %></td>
+      </tr>
+      <tr>
+        <th>Activated</th>
+        <td><%= @account.activated ? "Yes" : "No" %></td>
+      </tr>
+      <tr>
+        <th>Role</th>
+        <td><%= @account.user_type.presence || 'N/A' %></td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td><%= @account.status.presence || 'N/A' %></td>
+      </tr>
+      <tr>
+        <th>Terms Accepted</th>
+        <td><%= @account.terms_accepted ? "Yes" : "No" %></td>
+      </tr>
+      <tr>
+        <th>Blacklisted</th>
+        <td><%= @account.is_blacklisted ? "Yes" : "No" %></td>
+      </tr>
+      <tr>
+        <th>Last Visit</th>
+        <td><%= @account.last_visit_at.presence || 'N/A' %></td>
+      </tr>
+      <tr>
+        <th>Gender</th>
+        <td><%= @account.gender.presence || 'N/A' %></td>
+      </tr>
+      <tr>
+        <th>Date of Birth</th>
+        <td><%= @account.date_of_birth.presence || 'N/A' %></td>
+      </tr>
+      <tr>
+        <th>Age</th>
+        <td><%= @account.age.presence || 'N/A' %></td>
+      </tr>
+      <tr>
+        <th>Country Flag</th>
+        <td><%= @account.country_flag.presence || 'N/A' %></td>
+      </tr>
+      <tr>
+        <th>Emirates ID</th>
+        <td><%= @account.emirates_id.presence || 'N/A' %></td>
+      </tr>
+      <tr>
+        <th>Career Count</th>
+        <td><%= @account.career_count.presence || 'N/A' %></td>
+      </tr>
+      <tr>
+        <th>Platform</th>
+        <td><%= @account.platform.presence || 'N/A' %></td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>

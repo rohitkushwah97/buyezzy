@@ -1,0 +1,80 @@
+<%# app/views/account_block/intern_users/career_interest.html.erb %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Interests</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 20px;
+    }
+
+    .career-interests {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 800px;
+    }
+
+    h2 {
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 10px;
+      color: #3498db;
+      margin-bottom: 15px;
+    }
+
+    .career-interest-item {
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    strong {
+      color: #2c3e50;
+    }
+
+    .no-record {
+      color: #e74c3c;
+      font-style: italic;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Career Interests for <%= @intern_user&.first_name %></h1>
+
+  <div class="career-interests">
+    <h2>Career Interests</h2>
+    <% if @intern_user&.career_interests.present? %>
+      <% @intern_user.career_interests.each do |career_interest| %>
+        <div class="career-interest-item">
+          <p><strong>Industry:</strong> <%= career_interest&.industry&.name || 'N/A' %></p>
+          <p><strong>Role:</strong> <%= career_interest&.role&.name || 'N/A' %></p>
+          <p><strong>quiz_status:</strong> <%= career_interest&.user_survey&.quiz_status || 'N/A' %></p>
+          <p><strong>created_at:</strong> <%= career_interest&.created_at.to_date || 'N/A' %></p>
+        </div>
+        <hr>
+      <% end %>
+    <% else %>
+      <p class="no-record">No career interest records found.</p>
+    <% end %>
+  </div>
+</body>
+</html>
